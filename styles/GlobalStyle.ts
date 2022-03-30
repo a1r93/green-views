@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import { HEADER_SIZE, HEADER_SIZE_SMALL } from '../components/Header/style';
+
 export const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
@@ -11,5 +13,10 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Oswald-Regular', 'Roboto', 'Helvetica Neue', sans-serif;
     font-size: 16px;
     background: ${({ theme }) => theme.palette.primary[500]};
+    padding-top: ${HEADER_SIZE}px;
+    
+    ${({ theme }) => theme.breakpoints.forPhoneOnly} {
+      padding-top: ${HEADER_SIZE_SMALL}px;
+    }
   }
 `;

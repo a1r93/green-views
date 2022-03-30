@@ -3,18 +3,18 @@ import styled from 'styled-components';
 export const Heading1 = styled.h1`
     font-family: 'Oswald-Bold', 'Roboto', 'Helvetica Neue', sans-serif;
     font-size: 9vw;
-    line-height: 8vw;
+    line-height: 9vw;
     margin: 0;
     text-transform: uppercase;
 
     ${({ theme }) => theme.breakpoints.forPhoneOnly} {
         font-size: 8vw;
-        line-height: 7vw;
+        line-height: 8vw;
     }
 
     ${({ theme }) => theme.breakpoints.forTabletLandscapeUp} {
         font-size: 6.25rem;
-        line-height: 83px;
+        line-height: 100px;
     }
 `;
 

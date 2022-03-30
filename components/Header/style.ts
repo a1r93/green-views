@@ -1,19 +1,22 @@
 import styled from 'styled-components';
 
-import BurgerIcon from '../atoms/icons/burger';
+import BurgerIcon from '../atoms/icons/Burger';
 import { Row } from '../atoms/layout';
 import { Link } from '../atoms/typography';
+
+export const HEADER_SIZE = 110;
+export const HEADER_SIZE_SMALL = 70;
 
 export const HeaderContainer = styled(Row)<{ shouldDisplayShadow?: boolean }>`
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: 110px;
+    height: ${HEADER_SIZE}px;
     box-shadow: ${({ shouldDisplayShadow, theme }) => (shouldDisplayShadow ? theme.shadows[0] : 'none')};
 
     ${({ theme }) => theme.breakpoints.forPhoneOnly} {
-        height: 70px;
+        height: ${HEADER_SIZE_SMALL}px;
     }
 `;
 

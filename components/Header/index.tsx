@@ -1,4 +1,3 @@
-import BurgerIcon from '../atoms/icons/burger';
 import { HeaderContainer, Logo, Navigation, NavigationLink, StyledBurgerIcon } from './style';
 
 interface IHeaderProps {

@@ -22,7 +22,7 @@ export interface IBreakpoints {
     forBigDesktopUp: string;
 }
 
-export type TPaletteColors = keyof IPalette;
+export type TPaletteColors = keyof Omit<IPalette, 'white'>;
 
 declare module 'styled-components' {
     export interface DefaultTheme {
