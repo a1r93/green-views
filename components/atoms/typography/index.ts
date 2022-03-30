@@ -71,7 +71,7 @@ export const Body3 = styled.span`
     margin: 0;
 `;
 
-export const Body4 = styled.span`
+export const Link = styled.a`
     font-family: 'Lato-regular', 'Roboto', 'Helvetica Neue', sans-serif;
     font-size: 1.3125rem;
     line-height: 27px;

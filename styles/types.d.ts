@@ -28,6 +28,7 @@ declare module 'styled-components' {
     export interface DefaultTheme {
         palette: IPalette;
         breakpoints: IBreakpoints;
+        shadows: string[];
         transitionDuration: number;
         radius: number;
         ovalRadius: number;

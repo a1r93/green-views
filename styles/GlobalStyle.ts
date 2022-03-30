@@ -10,6 +10,6 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Oswald-Regular', 'Roboto', 'Helvetica Neue', sans-serif;
     font-size: 16px;
-    background: ${({ theme }) => theme.palette.white};
+    background: ${({ theme }) => theme.palette.primary[500]};
   }
 `;
