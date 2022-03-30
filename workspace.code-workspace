@@ -1,0 +1,27 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 4,
+        "editor.formatOnType": true,
+        "editor.formatOnSave": true,
+        "extensions.ignoreRecommendations": false,
+        "typescript.updateImportsOnFileMove.enabled": "never",
+        "files.insertFinalNewline": true,
+        "diffEditor.ignoreTrimWhitespace": false,
+
+        "[mjml]": {
+            "editor.defaultFormatter": "attilabuti.vscode-mjml"
+        },
+        "[shellscript]": {
+            "editor.defaultFormatter": "shakram02.bash-beautify"
+        }
+    },
+    "extensions": {
+        "recommendations": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode", "attilabuti.vscode-mjml"]
+    }
+}
