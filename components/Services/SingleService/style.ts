@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import { Column } from '../../atoms/layout';
+import Sprinkler from '../../drawings/Sprinkler';
 
 export const ServiceContainer = styled(Column)`
     position: relative;

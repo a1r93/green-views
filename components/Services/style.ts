@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 import { Column } from '../atoms/layout';
+import GrassLawner from '../drawings/GrassLawner';
+import Pruner from '../drawings/Pruner';
+import Sprinkler from '../drawings/Sprinkler';
+import WheelBarrower from '../drawings/WheelBarrower';
 
 export const ServicesContainer = styled(Column)`
     background: ${({ theme }) => theme.palette.white};
@@ -14,38 +18,22 @@ export const ServicesWrapper = styled(Column)`
     }
 `;
 
-export const ServiceContainer = styled(Column)`
-    position: relative;
-    width: 100%;
-    min-height: 160px;
+export const StyledGrassLawner = styled(GrassLawner)`
+    width: 180px;
+    height: 120px;
 `;
 
-export const ServiceContent = styled(Column)`
-    position: relative;
-    z-index: 2;
-    min-height: 136px;
-    gap: ${({ theme }) => theme.spacing([1.5])};
-
-    & span,
-    h3 {
-        color: ${({ theme }) => theme.palette.tertiary[900]};
-    }
+export const StyledWheelBarrower = styled(WheelBarrower)`
+    width: 160px;
+    height: 120px;
 `;
 
-export const DescriptionWrapper = styled(Column)``;
+export const StyledSprinkler = styled(Sprinkler)`
+    width: 240px;
+    height: 120px;
+`;
 
-export const ServiceNumberWrapper = styled.div`
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-    & svg {
-        position: relative;
-        top: 20%;
-    }
+export const StyledPruner = styled(Pruner)`
+    width: 163px;
+    height: 133px;
 `;
