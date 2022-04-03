@@ -1,6 +1,6 @@
-import { ReactElement, useEffect } from 'react';
+import { ReactElement } from 'react';
 
-import { drawPoints } from './drawPoints';
+import useScrollAnimation from './helpers/useScrollAnimation';
 
 interface IBaseIconProps {
     children: ReactElement | ReactElement[];
@@ -13,11 +13,7 @@ interface IBaseIconProps {
 export type BaseIconProps = Pick<IBaseIconProps, 'className' | 'scale' | 'id' | 'withPoints'>;
 
 const BaseIcon = ({ withPoints, className, scale = 1, children, id }: IBaseIconProps) => {
-    useEffect(() => {
-        if (withPoints) {
-            drawPoints(id);
-        }
-    }, [id, withPoints]);
+    useScrollAnimation(id, withPoints);
 
     return (
         <svg

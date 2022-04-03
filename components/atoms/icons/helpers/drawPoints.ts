@@ -31,20 +31,23 @@ export const drawPoints = (id: string) => {
     const group = svg?.querySelector(`#${id}-group`);
     const paths = svg?.querySelectorAll('path');
 
-    if (!group || !paths?.length) return;
+    if (!group || !paths?.length) return 0;
 
     group.innerHTML = '';
-    let delay = 0;
     let previousPoint: IPoint;
+    let drawnPoints = 0;
     paths?.forEach(path => {
         path.setAttribute('stroke-opacity', '0');
         const length = path.getTotalLength();
-        for (let i = 0; i < length; i += 1) {
+        let i: number;
+        for (i = 0; i <= length; i += 1) {
             const point = path.getPointAtLength(i);
             previousPoint && drawPointsInBetween(group, point, previousPoint);
             drawPoint(group, point);
             previousPoint = point;
         }
-        delay += length;
+        drawnPoints += i * 6;
     });
+
+    return drawnPoints;
 };
