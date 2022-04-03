@@ -52,7 +52,7 @@ export const Heading4 = styled.h4`
 export const Body1 = styled.span`
     font-family: 'Lato-regular', 'Roboto', 'Helvetica Neue', sans-serif;
     font-size: 1.125rem;
-    line-height: 1.5em;
+    line-height: 1.4em;
     margin: 0;
 
     ${({ theme }) => theme.breakpoints.forPhoneOnly} {

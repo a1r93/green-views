@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-import LeafIcon from '../atoms/icons/Leaf';
 import { Column } from '../atoms/layout';
 import { HEADER_SIZE, HEADER_SIZE_SMALL } from '../Header/style';
 
@@ -9,6 +8,10 @@ export const WelcomeContainer = styled.div`
     height: 150vh;
     margin-top: -${HEADER_SIZE}px;
     width: 100%;
+
+    ${({ theme }) => theme.breakpoints.forPhoneOnly} {
+        height: calc(100vh + ${HEADER_SIZE_SMALL}px);
+    }
 `;
 
 export const WelcomeWrapper = styled(Column)`
