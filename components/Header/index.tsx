@@ -21,7 +21,7 @@ const Header = ({ shouldDisplayShadow }: IHeaderProps) => (
                 <NavigationLink href="#">Gallerie</NavigationLink>
             </li>
         </Navigation>
-        <StyledBurgerIcon />
+        <StyledBurgerIcon id="burger-menu" />
     </HeaderContainer>
 );
 

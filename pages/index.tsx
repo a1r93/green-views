@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Header from '../components/Header';
+import Services from '../components/Services';
 import Welcome from '../components/Welcome';
 
 const Home: NextPage = () => {
@@ -7,6 +8,7 @@ const Home: NextPage = () => {
         <div style={{ display: 'flex', flexDirection: 'column' }}>
             <Header />
             <Welcome />
+            <Services />
         </div>
     );
 };
