@@ -39,9 +39,9 @@ const WheelBarrower = ({ className, color }: IWheelBarrowerProps) => {
             <path
                 d="M66.5 43L62.5 43.5L59.5 45L57 47.5L54.5 83L53 84.5L51.5 85.5H50L48.5 84.5L47.5 82L43 69"
                 stroke={finalColor}
-                stroke-width="2"
+                strokeWidth="2"
             />
-            <circle cx="11" cy="81.5" r="7.75" stroke={finalColor} stroke-width="3.5" />
+            <circle cx="11" cy="81.5" r="7.75" stroke={finalColor} strokeWidth="3.5" />
             <path
                 d="M13.5 81.4822C13.5 82.8629 12.3807 83.9822 11 83.9822C9.61929 83.9822 8.5 82.8629 8.5 81.4822C8.5 80.1015 9.61929 78.9822 11 78.9822C12.3807 78.9822 13.5 80.1015 13.5 81.4822Z"
                 fill={finalColor}

@@ -125,19 +125,19 @@ const GrassLawner = ({ className, color }: IGrassLawnerProps) => {
             <path
                 d="M53 33L47.5 40.5V44.5L48.8571 45.5M50.2143 46.5L76 65.5L52.5 48L55.5 44.5L55 42.5L53.5 42L52 43V46L50.2143 46.5ZM50.2143 46.5L48.8571 45.5M48.8571 45.5L48.9286 41.75M49 38L48.9286 41.75M48.9286 41.75L54.5 38"
                 stroke={finalColor}
-                stroke-width="2"
+                strokeWidth="2"
             />
             <path
                 d="M84 81.5C84 83.9853 81.9853 86 79.5 86C77.0147 86 75 83.9853 75 81.5C75 79.0147 77.0147 77 79.5 77C81.9853 77 84 79.0147 84 81.5Z"
                 fill={finalColor}
                 stroke={finalColor}
-                stroke-width="2"
+                strokeWidth="2"
             />
             <path
                 d="M108 81.5C108 83.9853 105.985 86 103.5 86C101.015 86 99 83.9853 99 81.5C99 79.0147 101.015 77 103.5 77C105.985 77 108 79.0147 108 81.5Z"
                 fill={finalColor}
                 stroke={finalColor}
-                stroke-width="2"
+                strokeWidth="2"
             />
         </svg>
     );

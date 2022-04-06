@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 import LeafIcon from '../../atoms/icons/Leaf';
 
@@ -15,6 +15,18 @@ export const LeavesWrapper = styled.div`
     width: 100%;
     height: 100%;
     z-index: -1;
+`;
+
+const float = (rotation: number) => keyframes`
+    0% {
+        transform: translatey(0px) rotate(${rotation}deg);
+    }
+    50% {
+        transform: translate(20px, -20px) rotate(${rotation}deg);
+    }
+    100% {
+        transform: translatey(0px) rotate(${rotation}deg);
+    }
 `;
 
 const baseLeafStyle = css`
@@ -36,29 +48,36 @@ const baseLeafStyle = css`
 `;
 
 export const Leaf1 = styled(LeafIcon)`
-    transform: rotate(-54deg);
     left: 16vw;
     top: 24vh;
+    transform: translatey(0px) rotate(-54deg);
+    animation: ${float(-54)} 7s ease-in-out infinite;
     ${baseLeafStyle};
 `;
 
 export const Leaf2 = styled(LeafIcon)`
-    transform: rotate(26deg);
     left: 78vw;
     top: 34vh;
+    transform: translatey(0px) rotate(26deg);
+    animation: ${float(26)} 7s ease-in-out infinite;
+    animation-delay: 0.25s;
     ${baseLeafStyle};
 `;
 
 export const Leaf3 = styled(LeafIcon)`
-    transform: rotate(34deg);
     left: 12vw;
     top: 62vh;
+    transform: translatey(0px) rotate(34deg);
+    animation: ${float(34)} 7s ease-in-out infinite;
+    animation-delay: 0.5s;
     ${baseLeafStyle};
 `;
 
 export const Leaf4 = styled(LeafIcon)`
-    transform: rotate(-26deg);
     left: 69vw;
     top: 70vh;
+    transform: translatey(0px) rotate(-26deg);
+    animation: ${float(-26)} 7s ease-in-out infinite;
+    animation-delay: 0.75s;
     ${baseLeafStyle};
 `;
