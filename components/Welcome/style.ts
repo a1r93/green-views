@@ -10,7 +10,7 @@ export const WelcomeContainer = styled.div`
     width: 100%;
 
     ${({ theme }) => theme.breakpoints.forPhoneOnly} {
-        height: calc(100vh + ${HEADER_SIZE_SMALL}px);
+        height: calc(120vh + ${HEADER_SIZE_SMALL}px);
     }
 `;
 
