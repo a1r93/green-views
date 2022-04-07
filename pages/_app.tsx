@@ -1,3 +1,4 @@
+import 'animate.css/animate.min.css';
 import './index.css';
 
 import { ThemeProvider } from 'styled-components';

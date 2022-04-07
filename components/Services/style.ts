@@ -27,6 +27,10 @@ export const StyledGrassLawner = styled(GrassLawner)`
     width: 75%;
     height: auto;
 
+    ${({ theme }) => theme.breakpoints.forTabletLandscapeUp} {
+        width: 70%;
+    }
+
     ${({ theme }) => theme.breakpoints.forPhoneOnly} {
         width: 180px;
     }
@@ -35,6 +39,10 @@ export const StyledGrassLawner = styled(GrassLawner)`
 export const StyledWheelBarrower = styled(WheelBarrower)`
     width: 75%;
     height: auto;
+
+    ${({ theme }) => theme.breakpoints.forTabletLandscapeUp} {
+        width: 70%;
+    }
 
     ${({ theme }) => theme.breakpoints.forPhoneOnly} {
         width: 160px;
@@ -46,6 +54,10 @@ export const StyledSprinkler = styled(Sprinkler)`
     height: auto;
     margin-left: ${({ theme }) => theme.spacing([3])};
 
+    ${({ theme }) => theme.breakpoints.forTabletLandscapeUp} {
+        width: 95%;
+    }
+
     ${({ theme }) => theme.breakpoints.forPhoneOnly} {
         width: 240px;
         margin-left: 0;
@@ -55,6 +67,10 @@ export const StyledSprinkler = styled(Sprinkler)`
 export const StyledPruner = styled(Pruner)`
     width: 75%;
     height: auto;
+
+    ${({ theme }) => theme.breakpoints.forTabletLandscapeUp} {
+        width: 70%;
+    }
 
     ${({ theme }) => theme.breakpoints.forPhoneOnly} {
         width: 163px;

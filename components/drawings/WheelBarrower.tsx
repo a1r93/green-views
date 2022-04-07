@@ -9,7 +9,7 @@ interface IWheelBarrowerProps {
 
 const WheelBarrower = ({ className, color }: IWheelBarrowerProps) => {
     const theme = useTheme();
-    const finalColor = color ? theme.palette[color][300] : 'white';
+    const finalColor = color ? theme.palette[color][100] : 'white';
 
     return (
         <svg
