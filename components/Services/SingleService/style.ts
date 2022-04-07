@@ -1,7 +1,19 @@
 import styled from 'styled-components';
 
-import { Column } from '../../atoms/layout';
-import Sprinkler from '../../drawings/Sprinkler';
+import { Column, Row } from '../../atoms/layout';
+
+export const ServiceWrapper = styled(Row)<{ revert: boolean }>`
+    flex-direction: ${({ revert }) => (revert ? 'row-reverse' : 'row')};
+    align-items: center;
+    gap: ${({ theme }) => theme.spacing([6])};
+    margin-top: ${({ theme }) => theme.spacing([30])};
+    width: 100%;
+
+    ${({ theme }) => theme.breakpoints.forPhoneOnly} {
+        flex-direction: column;
+        margin-top: ${({ theme }) => theme.spacing([8])};
+    }
+`;
 
 export const ServiceContainer = styled(Column)`
     position: relative;

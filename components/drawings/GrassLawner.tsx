@@ -9,7 +9,7 @@ interface IGrassLawnerProps {
 
 const GrassLawner = ({ className, color }: IGrassLawnerProps) => {
     const theme = useTheme();
-    const finalColor = color ? theme.palette[color][500] : 'white';
+    const finalColor = color ? theme.palette[color][300] : 'white';
 
     return (
         <svg
