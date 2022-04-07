@@ -21,13 +21,13 @@ export const Heading1 = styled.h1`
 export const Heading2 = styled.h2`
     font-family: 'Oswald-Bold', 'Roboto', 'Helvetica Neue', sans-serif;
     font-size: 2rem;
-    line-height: 0.95em;
+    line-height: 1.25em;
     margin: 0;
     text-transform: uppercase;
 
     ${({ theme }) => theme.breakpoints.forPhoneOnly} {
         font-size: 1.5rem;
-        line-height: 1em;
+        line-height: 1.3em;
     }
 `;
 
@@ -69,6 +69,17 @@ export const Body2 = styled.span`
 export const Body3 = styled.span`
     font-size: 0.8125rem;
     margin: 0;
+`;
+
+export const Body4 = styled.span`
+    font-family: 'Lato-regular', 'Roboto', 'Helvetica Neue', sans-serif;
+    font-size: 1.3125rem;
+    line-height: 34px;
+    margin: 0;
+
+    ${({ theme }) => theme.breakpoints.forPhoneOnly} {
+        line-height: 30px;
+    }
 `;
 
 export const Link = styled.a`
