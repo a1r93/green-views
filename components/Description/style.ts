@@ -25,18 +25,25 @@ export const DescriptionWrapper = styled(Column)`
     }
 `;
 
-export const ListWrapper = styled(Column)`
-    width: 100vw;
+export const ListContainer = styled(DescriptionContainer)`
     background: ${({ theme }) => theme.palette.white};
     background: linear-gradient(
         180deg,
-        ${({ theme }) => theme.palette.white} 20%,
+        ${({ theme }) => theme.palette.white} 0%,
         ${({ theme }) => theme.palette.primary[500]} 100%
     );
-    padding: ${({ theme }) => theme.spacing([3, 4, 8])};
+`;
+
+export const ListWrapper = styled(Column)`
+    max-width: 520px;
+    padding: ${({ theme }) => theme.spacing([3, 2, 8])};
 
     & > div {
         margin: ${({ theme }) => theme.spacing([1, 0])};
+    }
+
+    ${({ theme }) => theme.breakpoints.forPhoneOnly} {
+        padding: ${({ theme }) => theme.spacing([3, 4, 8])};
     }
 `;
 
