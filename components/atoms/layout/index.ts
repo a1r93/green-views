@@ -53,3 +53,8 @@ export const Grid = styled(Container)<IGrid>`
     grid-template-rows: ${({ rows = 1 }) => getTemplate(rows)};
     justify-items: ${({ justify = 'initial' }) => justify};
 `;
+
+export const LimitedWidthContainer = styled(Container)<{ maxWidth: number }>`
+    display: ${({ inline }) => (inline ? 'inline-flex' : 'flex')};
+    max-width: ${({ maxWidth }) => maxWidth}px;
+`;

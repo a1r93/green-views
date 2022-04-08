@@ -1,13 +1,35 @@
 import styled from 'styled-components';
 
-import { Column } from '../atoms/layout';
+import { Column, LimitedWidthContainer } from '../atoms/layout';
 
-export const DescriptionContainer = styled(Column)`
+export const DescriptionContainer = styled.div`
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: ${({ theme }) => theme.palette.white};
+
+    background: ${({ theme }) => theme.palette.white};
+    background: linear-gradient(
+        180deg,
+        ${({ theme }) => theme.palette.white} 70%,
+        ${({ theme }) => theme.palette.primary[500]} 100%
+    );
+
+    ${({ theme }) => theme.breakpoints.forTabletLandscapeUp} {
+        background: linear-gradient(
+            180deg,
+            ${({ theme }) => theme.palette.white} 40%,
+            ${({ theme }) => theme.palette.primary[500]} 100%
+        );
+    }
+`;
+
+export const StyledLimitedWidth = styled(LimitedWidthContainer)`
+    flex-direction: column-reverse;
+
+    ${({ theme }) => theme.breakpoints.forTabletLandscapeUp} {
+        flex-direction: row;
+    }
 `;
 
 export const DescriptionWrapper = styled(Column)`
@@ -21,17 +43,11 @@ export const DescriptionWrapper = styled(Column)`
     & h2 {
         color: ${({ theme }) => theme.palette.primary[700]};
         margin-bottom: ${({ theme }) => theme.spacing([4])};
-        text-align: center;
-    }
-`;
 
-export const ListContainer = styled(DescriptionContainer)`
-    background: ${({ theme }) => theme.palette.white};
-    background: linear-gradient(
-        180deg,
-        ${({ theme }) => theme.palette.white} 0%,
-        ${({ theme }) => theme.palette.primary[500]} 100%
-    );
+        ${({ theme }) => theme.breakpoints.forPhoneOnly} {
+            text-align: center;
+        }
+    }
 `;
 
 export const ListWrapper = styled(Column)`
@@ -53,4 +69,18 @@ export const Circle = styled.div`
     height: 10px;
     border-radius: 10px;
     background-color: ${({ theme }) => theme.palette.tertiary[900]};
+`;
+
+export const StyledImage = styled.img`
+    width: 80%;
+    max-width: 480px;
+    margin: ${({ theme }) => theme.spacing([2])};
+
+    ${({ theme }) => theme.breakpoints.forTabletLandscapeUp} {
+        width: 100%;
+    }
+
+    ${({ theme }) => theme.breakpoints.forDesktopUp} {
+        max-width: 520px;
+    }
 `;

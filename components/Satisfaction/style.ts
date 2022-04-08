@@ -12,4 +12,11 @@ export const SatisfactionContainer = styled(Column)`
         color: ${({ theme }) => theme.palette.white};
         text-align: center;
     }
+
+    & svg {
+        height: auto;
+        min-width: 212px;
+        max-width: 400px;
+        width: 35%;
+    }
 `;
