@@ -1,6 +1,6 @@
 import { useTheme } from 'styled-components';
 
-import { TPaletteColors } from '../../styles/types';
+import { TPaletteColors } from '../../../styles/types';
 
 interface IWheelBarrowerProps {
     className?: string;

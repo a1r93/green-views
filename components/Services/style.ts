@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
+import GrassLawner from '../atoms/drawings/GrassLawner';
+import Pruner from '../atoms/drawings/Pruner';
+import Sprinkler from '../atoms/drawings/Sprinkler';
+import WheelBarrower from '../atoms/drawings/WheelBarrower';
 import { Column } from '../atoms/layout';
-import GrassLawner from '../drawings/GrassLawner';
-import Pruner from '../drawings/Pruner';
-import Sprinkler from '../drawings/Sprinkler';
-import WheelBarrower from '../drawings/WheelBarrower';
 
 export const ServicesContainer = styled(Column)`
     background: ${({ theme }) => theme.palette.white};

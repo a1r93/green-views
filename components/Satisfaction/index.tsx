@@ -1,6 +1,5 @@
-import { Spaced } from '../atoms/layout';
+import Belgium from '../atoms/drawings/Belgium';
 import { Body1, Heading2 } from '../atoms/typography';
-import Belgium from '../drawings/Belgium';
 import { SatisfactionContainer } from './style';
 
 const Satisfaction = () => (
