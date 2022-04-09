@@ -32,11 +32,11 @@ export const DescriptionWrapper = styled(Column)`
     max-width: 520px;
     padding: ${({ theme }) => theme.spacing([0, 3])};
 
-    & span {
+    & > span {
         color: ${({ theme }) => theme.palette.tertiary[900]};
     }
 
-    & h2 {
+    & > h2 {
         color: ${({ theme }) => theme.palette.primary[700]};
         margin-bottom: ${({ theme }) => theme.spacing([4])};
 

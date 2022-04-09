@@ -1,5 +1,7 @@
+import { AnimationOnScroll } from 'react-animation-on-scroll';
+
 import Ids from '../../constants/ids';
-import { Column, Grid } from '../atoms/layout';
+import { Column, Grid, Row } from '../atoms/layout';
 import { Body1, Body4, Heading2 } from '../atoms/typography';
 import {
     Circle, DescriptionContainer, DescriptionWrapper, ListWrapper, StyledImage, StyledLimitedWidth
@@ -35,7 +37,12 @@ const Description = () => (
                     </Grid>
                 </ListWrapper>
             </Column>
-            <StyledImage src="/images/description_image.png" />
+
+            <AnimationOnScroll animateIn="animate__jello" duration={1} animateOnce>
+                <Row align="center" justify="center">
+                    <StyledImage src="/images/description_image.png" />
+                </Row>
+            </AnimationOnScroll>
         </StyledLimitedWidth>
     </DescriptionContainer>
 );

@@ -12,10 +12,14 @@ export const SatisfactionContainer = styled(Column)`
         text-align: center;
     }
 
-    & svg {
-        height: auto;
+    & .animate__animated {
         min-width: 212px;
         max-width: 400px;
         width: 35%;
+    }
+
+    & svg {
+        height: auto;
+        width: 100%;
     }
 `;
