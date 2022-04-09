@@ -28,14 +28,6 @@ export const DescriptionContainer = styled.div`
     }
 `;
 
-export const StyledLimitedWidth = styled(LimitedWidthContainer)`
-    flex-direction: column-reverse;
-
-    ${({ theme }) => theme.breakpoints.forTabletLandscapeUp} {
-        flex-direction: row;
-    }
-`;
-
 export const DescriptionWrapper = styled(Column)`
     max-width: 520px;
     padding: ${({ theme }) => theme.spacing([0, 3])};
@@ -51,6 +43,14 @@ export const DescriptionWrapper = styled(Column)`
         ${({ theme }) => theme.breakpoints.forPhoneOnly} {
             text-align: center;
         }
+    }
+`;
+
+export const StyledLimitedWidth = styled(LimitedWidthContainer)`
+    flex-direction: column-reverse;
+
+    ${({ theme }) => theme.breakpoints.forTabletLandscapeUp} {
+        flex-direction: row;
     }
 `;
 

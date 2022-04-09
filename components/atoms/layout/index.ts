@@ -5,6 +5,11 @@ interface ISpaced {
     padding?: number[];
 }
 
+export const Spaced = styled('div')<ISpaced>`
+    margin: ${({ theme, margin = [0] }) => theme.spacing(margin)};
+    padding: ${({ theme, padding = [0] }) => theme.spacing(padding)};
+`;
+
 interface IFlexBox {
     justify?: string;
     align?: string;
@@ -12,18 +17,7 @@ interface IFlexBox {
     inline?: boolean;
 }
 
-interface IGrid {
-    cols?: number | string;
-    rows?: number | string;
-    gap?: number;
-}
-
-export const Spaced = styled('div')<ISpaced>`
-    margin: ${({ theme, margin = [0] }) => theme.spacing(margin)};
-    padding: ${({ theme, padding = [0] }) => theme.spacing(padding)};
-`;
-
-export const Container = styled(Spaced)<IFlexBox>`
+const Container = styled(Spaced)<IFlexBox>`
     justify-content: ${({ justify = 'initial' }) => justify};
     align-items: ${({ align = 'initial' }) => align};
     flex: ${({ span = 1 }) => span};
@@ -40,6 +34,12 @@ export const Column = styled(Container)`
     display: ${({ inline }) => (inline ? 'inline-flex' : 'flex')};
     flex-direction: column;
 `;
+
+interface IGrid {
+    cols?: number | string;
+    rows?: number | string;
+    gap?: number;
+}
 
 const getTemplate = (gridItem: number | string) =>
     typeof gridItem === 'string' ? gridItem : `repeat(${gridItem}, 1fr)`;

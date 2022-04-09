@@ -1,3 +1,4 @@
+import Ids from '../../constants/ids';
 import { Column, Grid } from '../atoms/layout';
 import { Body1, Body4, Heading2 } from '../atoms/typography';
 import {
@@ -6,7 +7,7 @@ import {
 
 const Description = () => (
     <DescriptionContainer>
-        <StyledLimitedWidth maxWidth={1150} align="center" margin={[6, 0, 0]}>
+        <StyledLimitedWidth maxWidth={1150} align="center" margin={[6, 0, 0]} id={Ids.DESCRIPTION}>
             <Column>
                 <DescriptionWrapper>
                     <Heading2>Laissez vous aider par des professionnels</Heading2>

@@ -1,3 +1,4 @@
+import Ids from '../../constants/ids';
 import { Heading2 } from '../atoms/typography';
 import SingleService from './SingleService';
 import {
@@ -6,7 +7,7 @@ import {
 } from './style';
 
 const Services = () => (
-    <ServicesContainer align="center" padding={[8, 2]}>
+    <ServicesContainer align="center" padding={[8, 2]} id={Ids.SERVICES}>
         <ServicesWrapper align="center">
             <Heading2>Nos services</Heading2>
 

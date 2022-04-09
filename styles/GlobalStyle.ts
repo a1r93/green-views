@@ -9,6 +9,10 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: 'Oswald-Regular', 'Roboto', 'Helvetica Neue', sans-serif;
     font-size: 16px;

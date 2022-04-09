@@ -1,3 +1,4 @@
+import Ids from '../../constants/ids';
 import Button from '../atoms/Button';
 import { Row } from '../atoms/layout';
 import TextField from '../atoms/TextField';
@@ -5,7 +6,7 @@ import { Body1, Heading2 } from '../atoms/typography';
 import { ContactContainer, ContactWrapper } from './style';
 
 const Contact = () => (
-    <ContactContainer justify="space-evenly" align="center" padding={[8, 3]}>
+    <ContactContainer justify="space-evenly" align="center" padding={[8, 3]} id={Ids.CONTACT}>
         <ContactWrapper justify="center">
             <Heading2>Contactez-nous dès maintenant !</Heading2>
             <Body1>

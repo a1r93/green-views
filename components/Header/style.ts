@@ -21,6 +21,7 @@ export const HeaderContainer = styled(Row)<{ shouldDisplayShadow?: boolean }>`
 `;
 
 export const Logo = styled.img`
+    cursor: pointer;
     ${({ theme }) => theme.breakpoints.forPhoneOnly} {
         width: 60px;
         height: 32.4px;

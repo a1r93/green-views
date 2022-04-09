@@ -68,6 +68,7 @@ export const Body2 = styled.span`
 `;
 
 export const Body3 = styled.span`
+    font-family: 'Lato-regular', 'Roboto', 'Helvetica Neue', sans-serif;
     font-size: 0.8125rem;
     margin: 0;
 `;
@@ -88,6 +89,7 @@ export const Link = styled.a`
     font-size: 1.3125rem;
     line-height: 27px;
     margin: 0;
+    text-decoration: none;
 
     ${({ theme }) => theme.breakpoints.forPhoneOnly} {
         line-height: 23px;
