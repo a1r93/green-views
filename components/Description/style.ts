@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { Column, LimitedWidthContainer } from '../atoms/layout';
 
 export const DescriptionContainer = styled.div`
-    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 0 10vh;
 
     background: ${({ theme }) => theme.palette.white};
     background: linear-gradient(
@@ -14,6 +14,10 @@ export const DescriptionContainer = styled.div`
         ${({ theme }) => theme.palette.white} 70%,
         ${({ theme }) => theme.palette.primary[500]} 100%
     );
+
+    ${({ theme }) => theme.breakpoints.forTabletPortraitUp} {
+        padding: 15vh 0;
+    }
 
     ${({ theme }) => theme.breakpoints.forTabletLandscapeUp} {
         background: linear-gradient(

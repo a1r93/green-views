@@ -63,6 +63,7 @@ export const Body1 = styled.span`
 export const Body2 = styled.span`
     font-family: 'Lato-regular', 'Roboto', 'Helvetica Neue', sans-serif;
     font-size: 0.875rem;
+    line-height: 1.4em;
     margin: 0;
 `;
 

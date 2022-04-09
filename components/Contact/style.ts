@@ -5,7 +5,6 @@ import { HEADER_SIZE, HEADER_SIZE_SMALL } from '../Header/style';
 
 export const ContactContainer = styled(Column)`
     background-color: ${({ theme }) => theme.palette.secondary[100]};
-    width: 100vw;
     min-height: 100vh;
     padding: ${({ theme }) => theme.spacing([4, 3])};
     padding-top: ${HEADER_SIZE}px;
