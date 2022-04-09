@@ -6,10 +6,11 @@ import Header from '../components/Header';
 import Satisfaction from '../components/Satisfaction';
 import Services from '../components/Services';
 import Welcome from '../components/Welcome';
+import { HomePageContainer } from './style';
 
 const Home: NextPage = () => {
     return (
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <HomePageContainer>
             <Header />
             <Welcome />
             <Services />
@@ -17,7 +18,7 @@ const Home: NextPage = () => {
             <Satisfaction />
             <Contact />
             <Footer />
-        </div>
+        </HomePageContainer>
     );
 };
 

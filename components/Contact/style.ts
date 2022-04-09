@@ -3,14 +3,16 @@ import styled from 'styled-components';
 import { Column } from '../atoms/layout';
 import { HEADER_SIZE, HEADER_SIZE_SMALL } from '../Header/style';
 
+export const ContactTeetContainer = styled(Column)`
+    overflow: hidden;
+`;
+
 export const ContactContainer = styled(Column)`
     background-color: ${({ theme }) => theme.palette.secondary[100]};
-    min-height: 100vh;
-    padding: ${({ theme }) => theme.spacing([4, 3])};
-    padding-top: ${HEADER_SIZE}px;
+    padding: ${HEADER_SIZE + 30}px ${({ theme }) => theme.spacing([3])};
 
     ${({ theme }) => theme.breakpoints.forPhoneOnly} {
-        padding-top: ${HEADER_SIZE_SMALL}px;
+        padding: ${HEADER_SIZE_SMALL + 30}px ${({ theme }) => theme.spacing([3])};
     }
 `;
 

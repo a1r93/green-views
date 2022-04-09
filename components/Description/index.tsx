@@ -38,7 +38,7 @@ const Description = () => (
                 </ListWrapper>
             </Column>
 
-            <AnimationOnScroll animateIn="animate__jello" duration={1} animateOnce>
+            <AnimationOnScroll animateIn="animate__fadeIn" duration={1} animateOnce>
                 <Row align="center" justify="center">
                     <StyledImage src="/images/description_image.png" />
                 </Row>

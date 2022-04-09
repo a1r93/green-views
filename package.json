@@ -14,6 +14,7 @@
     "react": "18.0.0",
     "react-animation-on-scroll": "^5.0.0",
     "react-dom": "18.0.0",
+    "react-photo-album": "^1.12.0",
     "splitting": "^1.0.6",
     "styled-components": "^5.3.5"
   },

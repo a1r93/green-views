@@ -4,7 +4,11 @@ import { Column, Row } from '../atoms/layout';
 
 export const FooterContainer = styled(Column)`
     background-color: ${({ theme }) => theme.palette.primary[500]};
-    padding: ${({ theme }) => theme.spacing([6, 3])};
+    padding: ${({ theme }) => theme.spacing([8, 3])};
+
+    ${({ theme }) => theme.breakpoints.forPhoneOnly} {
+        padding: ${({ theme }) => theme.spacing([6, 3])};
+    }
 `;
 
 export const FooterWrapper = styled(Row)`

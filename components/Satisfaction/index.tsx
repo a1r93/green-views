@@ -1,17 +1,17 @@
-import { AnimationOnScroll } from 'react-animation-on-scroll';
+import PhotoAlbum from 'react-photo-album';
 
 import Ids from '../../constants/ids';
-import Belgium from '../atoms/drawings/Belgium';
-import { Body1, Heading2 } from '../atoms/typography';
-import { SatisfactionContainer } from './style';
+import { Heading2 } from '../atoms/typography';
+import photos from './photos';
+import { Fade, SatisfactionContainer, SatisfactionWrapper } from './style';
 
 const Satisfaction = () => (
-    <SatisfactionContainer justify="space-evenly" align="center" padding={[8, 3]} id={Ids.SATISFACTION}>
-        <Heading2>Des clients satisfaits partout en belgique</Heading2>
-        <AnimationOnScroll animateIn="animate__pulse" duration={0.8} animateOnce>
-            <Belgium />
-        </AnimationOnScroll>
-        <Body1>Vous aussi vous avez droit à un jardin exceptionnel</Body1>
+    <SatisfactionContainer justify="flex-start" align="center" padding={[4, 3]} id={Ids.SATISFACTION}>
+        <Heading2>Gallerie photo</Heading2>
+        <SatisfactionWrapper>
+            <PhotoAlbum photos={photos} layout="columns" />
+        </SatisfactionWrapper>
+        <Fade />
     </SatisfactionContainer>
 );
 
