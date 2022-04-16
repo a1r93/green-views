@@ -9,6 +9,7 @@ export const HEADER_SIZE_SMALL = 70;
 
 export const HeaderContainer = styled(Row)<{ shouldDisplayShadow?: boolean }>`
     position: fixed;
+    z-index: 99;
     top: 0;
     left: 0;
     right: 0;
