@@ -1,11 +1,34 @@
+import { useEffect, useState } from 'react';
+
 import Ids from '../../constants/ids';
-import { HeaderContainer, Logo, Navigation, NavigationLink, StyledBurgerIcon } from './style';
+import { useResizeListener } from '../../hooks';
+import {
+    HEADER_SIZE, HEADER_SIZE_SMALL, HeaderContainer, Logo, Navigation, NavigationLink,
+    StyledBurgerIcon
+} from './style';
 
-interface IHeaderProps {
-    shouldDisplayShadow?: boolean;
-}
+const Header = () => {
+    const [shouldDisplayShadow, setShouldDisplayShadow] = useState(false);
+    const { width, height } = useResizeListener();
 
-const Header = ({ shouldDisplayShadow }: IHeaderProps) => {
+    useEffect(() => {
+        const onScroll = (event: Event) => {
+            const scrolled = document?.scrollingElement?.scrollTop || 0;
+
+            const mobileHeight = height * 1.2 - HEADER_SIZE_SMALL;
+            const webHeight = height * 1.5 - HEADER_SIZE;
+            const welcomeHeight = width >= 600 ? webHeight : mobileHeight;
+
+            setShouldDisplayShadow(scrolled > welcomeHeight);
+        };
+
+        window.addEventListener('scroll', onScroll);
+
+        return () => {
+            window.removeEventListener('scroll', onScroll);
+        };
+    }, [height, width]);
+
     const navigateTo = (id: Ids) => {
         const element = document.getElementById(id);
         element?.scrollIntoView({ behavior: 'smooth' });
@@ -18,27 +41,43 @@ const Header = ({ shouldDisplayShadow }: IHeaderProps) => {
             </NavigationLink>
             <Navigation>
                 <li>
-                    <NavigationLink href={`#${Ids.SERVICES}`} onClick={() => navigateTo(Ids.SERVICES)}>
+                    <NavigationLink
+                        href={`#${Ids.SERVICES}`}
+                        onClick={() => navigateTo(Ids.SERVICES)}
+                        shouldDisplayShadow={shouldDisplayShadow}
+                    >
                         Services
                     </NavigationLink>
                 </li>
                 <li>
-                    <NavigationLink href={`#${Ids.DESCRIPTION}`} onClick={() => navigateTo(Ids.DESCRIPTION)}>
+                    <NavigationLink
+                        href={`#${Ids.DESCRIPTION}`}
+                        onClick={() => navigateTo(Ids.DESCRIPTION)}
+                        shouldDisplayShadow={shouldDisplayShadow}
+                    >
                         Description
                     </NavigationLink>
                 </li>
                 <li>
-                    <NavigationLink href={`#${Ids.GALLERY}`} onClick={() => navigateTo(Ids.GALLERY)}>
+                    <NavigationLink
+                        href={`#${Ids.GALLERY}`}
+                        onClick={() => navigateTo(Ids.GALLERY)}
+                        shouldDisplayShadow={shouldDisplayShadow}
+                    >
                         Gallerie
                     </NavigationLink>
                 </li>
                 <li>
-                    <NavigationLink href={`#${Ids.CONTACT}`} onClick={() => navigateTo(Ids.CONTACT)}>
+                    <NavigationLink
+                        href={`#${Ids.CONTACT}`}
+                        onClick={() => navigateTo(Ids.CONTACT)}
+                        shouldDisplayShadow={shouldDisplayShadow}
+                    >
                         Contact
                     </NavigationLink>
                 </li>
             </Navigation>
-            <StyledBurgerIcon id="burger-menu" />
+            <StyledBurgerIcon id="burger-menu" shouldDisplayShadow={shouldDisplayShadow} />
         </HeaderContainer>
     );
 };

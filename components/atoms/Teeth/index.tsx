@@ -48,7 +48,7 @@ const Teeth = ({ reverse }: ITeethProps) => {
             event.stopPropagation();
             event.preventDefault();
 
-            var scrolled = document?.scrollingElement?.scrollTop || 0;
+            const scrolled = document?.scrollingElement?.scrollTop || 0;
             const remaining = pageHeight - height - scrolled;
             const percentage = remaining / pageHeight;
             const result = percentage * 30;

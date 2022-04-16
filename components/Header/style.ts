@@ -15,6 +15,8 @@ export const HeaderContainer = styled(Row)<{ shouldDisplayShadow?: boolean }>`
     right: 0;
     height: ${HEADER_SIZE}px;
     box-shadow: ${({ shouldDisplayShadow, theme }) => (shouldDisplayShadow ? theme.shadows[0] : 'none')};
+    background-color: ${({ shouldDisplayShadow, theme }) =>
+        shouldDisplayShadow ? theme.palette.white : 'transparent'};
 
     ${({ theme }) => theme.breakpoints.forPhoneOnly} {
         height: ${HEADER_SIZE_SMALL}px;
@@ -39,12 +41,18 @@ export const Navigation = styled.ul`
     }
 `;
 
-export const NavigationLink = styled(Link)`
-    color: white;
+export const NavigationLink = styled(Link)<{ shouldDisplayShadow?: boolean }>`
+    color: ${({ shouldDisplayShadow, theme }) =>
+        shouldDisplayShadow ? theme.palette.primary[500] : theme.palette.white};
 `;
 
-export const StyledBurgerIcon = styled(BurgerIcon)`
+export const StyledBurgerIcon = styled(BurgerIcon)<{ shouldDisplayShadow?: boolean }>`
     display: none;
+
+    & line {
+        stroke: ${({ shouldDisplayShadow, theme }) =>
+            shouldDisplayShadow ? theme.palette.primary[500] : theme.palette.white};
+    }
 
     ${({ theme }) => theme.breakpoints.forPhoneOnly} {
         display: block;

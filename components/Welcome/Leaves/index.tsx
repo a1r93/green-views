@@ -26,7 +26,7 @@ const Leaves = () => {
             event.stopPropagation();
             event.preventDefault();
 
-            var scrolled = document?.scrollingElement?.scrollTop || 0;
+            const scrolled = document?.scrollingElement?.scrollTop || 0;
             if (scrolled > height * 1.5) return;
 
             // We have a vh of 150 in the parent container

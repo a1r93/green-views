@@ -1,15 +1,18 @@
 import Ids from '../../constants/ids';
-import { Heading2 } from '../atoms/typography';
+import { Body2, Heading2 } from '../atoms/typography';
 import SingleService from './SingleService';
 import {
     ServicesContainer, ServicesWrapper, StyledGrassLawner, StyledPruner, StyledSprinkler,
-    StyledWheelBarrower
+    StyledWheelBarrower, TitleWrapper
 } from './style';
 
 const Services = () => (
     <ServicesContainer align="center" padding={[8, 2]} id={Ids.SERVICES}>
         <ServicesWrapper align="center">
-            <Heading2>Nos services</Heading2>
+            <TitleWrapper>
+                <Heading2>Nos services</Heading2>
+                <Body2>Voici ce que nous vous proposons</Body2>
+            </TitleWrapper>
 
             <SingleService
                 title="Entretien"

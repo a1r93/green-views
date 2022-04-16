@@ -33,7 +33,7 @@ const Gallery = () => {
                 <Body2>Découvrez un appercu de notre quotidien</Body2>
             </Column>
             <GalleryWrapper>
-                <PhotoAlbum photos={photos || []} layout="columns" />
+                <PhotoAlbum onClick={(event, test) => console.log(test)} photos={photos || []} layout="columns" />
             </GalleryWrapper>
             {!shouldShowAll && <Fade onClick={() => setShouldShowAll(true)} />}
         </GalleryContainer>
