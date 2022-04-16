@@ -28,13 +28,13 @@ const Header = ({ shouldDisplayShadow }: IHeaderProps) => {
                     </NavigationLink>
                 </li>
                 <li>
-                    <NavigationLink href={`#${Ids.CONTACT}`} onClick={() => navigateTo(Ids.CONTACT)}>
-                        Contact
+                    <NavigationLink href={`#${Ids.GALLERY}`} onClick={() => navigateTo(Ids.GALLERY)}>
+                        Gallerie
                     </NavigationLink>
                 </li>
                 <li>
-                    <NavigationLink href={`#${Ids.SERVICES}`} onClick={() => navigateTo(Ids.SERVICES)}>
-                        Gallerie
+                    <NavigationLink href={`#${Ids.CONTACT}`} onClick={() => navigateTo(Ids.CONTACT)}>
+                        Contact
                     </NavigationLink>
                 </li>
             </Navigation>

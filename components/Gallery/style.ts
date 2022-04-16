@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 import { Column } from '../atoms/layout';
+import { HEADER_SIZE, HEADER_SIZE_SMALL } from '../Header/style';
 
-export const SatisfactionContainer = styled(Column)`
+export const GalleryContainer = styled(Column)`
     position: relative;
-    max-height: 100vh;
+    max-height: calc(100vh - ${HEADER_SIZE}px);
     overflow: hidden;
     margin-bottom: ${({ theme }) => theme.spacing([8])};
 
@@ -24,9 +25,13 @@ export const SatisfactionContainer = styled(Column)`
         height: auto;
         width: 100%;
     }
+
+    ${({ theme }) => theme.breakpoints.forPhoneOnly} {
+        max-height: calc(100vh - ${HEADER_SIZE_SMALL}px);
+    }
 `;
 
-export const SatisfactionWrapper = styled.div`
+export const GalleryWrapper = styled.div`
     width: 100%;
     max-width: 1150px;
     margin-top: ${({ theme }) => theme.spacing([6])};

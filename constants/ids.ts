@@ -1,7 +1,7 @@
 enum Ids {
     CONTACT = 'contact-section',
     DESCRIPTION = 'description-section',
-    SATISFACTION = `satisfaction-section`,
+    GALLERY = `gallery-section`,
     SERVICES = 'services-section',
     WELCOME = 'welcome-section',
 }
