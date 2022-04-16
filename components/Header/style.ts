@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import BurgerIcon from '../atoms/icons/Burger';
 import { Row } from '../atoms/layout';
-import { Link } from '../atoms/typography';
+import { Body1, Link } from '../atoms/typography';
 
 export const HEADER_SIZE = 110;
 export const HEADER_SIZE_SMALL = 70;
@@ -43,7 +43,22 @@ export const Navigation = styled.ul`
 
 export const NavigationLink = styled(Link)<{ shouldDisplayShadow?: boolean }>`
     color: ${({ shouldDisplayShadow, theme }) =>
-        shouldDisplayShadow ? theme.palette.primary[500] : theme.palette.white};
+        shouldDisplayShadow ? theme.palette.primary[900] : theme.palette.white};
+`;
+
+export const LanguageWrapper = styled(Row)`
+    min-width: 90px;
+
+    ${({ theme }) => theme.breakpoints.forPhoneOnly} {
+        display: none;
+    }
+`;
+
+export const LanguageSpan = styled(Body1)<{ isSelected: boolean; shouldDisplayShadow: boolean }>`
+    color: ${({ shouldDisplayShadow, theme }) =>
+        shouldDisplayShadow ? theme.palette.primary[900] : theme.palette.white};
+    text-decoration: ${({ isSelected }) => (isSelected ? 'underline' : 'none')};
+    cursor: pointer;
 `;
 
 export const StyledBurgerIcon = styled(BurgerIcon)<{ shouldDisplayShadow?: boolean }>`
@@ -51,7 +66,7 @@ export const StyledBurgerIcon = styled(BurgerIcon)<{ shouldDisplayShadow?: boole
 
     & line {
         stroke: ${({ shouldDisplayShadow, theme }) =>
-            shouldDisplayShadow ? theme.palette.primary[500] : theme.palette.white};
+            shouldDisplayShadow ? theme.palette.primary[900] : theme.palette.white};
     }
 
     ${({ theme }) => theme.breakpoints.forPhoneOnly} {

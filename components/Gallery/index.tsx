@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import PhotoAlbum from 'react-photo-album';
 import useSWR from 'swr';
 
@@ -15,6 +16,7 @@ const fetcher = (url: string) =>
     });
 
 const Gallery = () => {
+    const { t } = useTranslation('gallery');
     const [shouldShowAll, setShouldShowAll] = useState(false);
     const { data: photos, error } = useSWR('/api/pictures', fetcher);
 
@@ -29,8 +31,8 @@ const Gallery = () => {
             shouldShowAll={shouldShowAll}
         >
             <Column>
-                <Heading2>Gallerie photo</Heading2>
-                <Body2>Découvrez un appercu de notre quotidien</Body2>
+                <Heading2>{t('gallery')}</Heading2>
+                <Body2>{t('gallery-subtitle')}</Body2>
             </Column>
             <GalleryWrapper>
                 <PhotoAlbum onClick={(event, test) => console.log(test)} photos={photos || []} layout="columns" />

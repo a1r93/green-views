@@ -1,5 +1,6 @@
 import 'animate.css/animate.min.css';
 import './index.css';
+import '../translations';
 
 import { ThemeProvider } from 'styled-components';
 

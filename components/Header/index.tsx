@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Ids from '../../constants/ids';
 import { useResizeListener } from '../../hooks';
 import {
-    HEADER_SIZE, HEADER_SIZE_SMALL, HeaderContainer, Logo, Navigation, NavigationLink,
-    StyledBurgerIcon
+    HEADER_SIZE, HEADER_SIZE_SMALL, HeaderContainer, LanguageSpan, LanguageWrapper, Logo,
+    Navigation, NavigationLink, StyledBurgerIcon
 } from './style';
 
 const Header = () => {
+    const { t, i18n } = useTranslation('header');
     const [shouldDisplayShadow, setShouldDisplayShadow] = useState(false);
     const { width, height } = useResizeListener();
 
@@ -33,6 +35,9 @@ const Header = () => {
         const element = document.getElementById(id);
         element?.scrollIntoView({ behavior: 'smooth' });
     };
+    const onLanguageClick = (language: string) => {
+        i18n.changeLanguage(language);
+    };
 
     return (
         <HeaderContainer justify="space-between" align="center" padding={[2]} shouldDisplayShadow={shouldDisplayShadow}>
@@ -46,7 +51,7 @@ const Header = () => {
                         onClick={() => navigateTo(Ids.SERVICES)}
                         shouldDisplayShadow={shouldDisplayShadow}
                     >
-                        Services
+                        {t('services')}
                     </NavigationLink>
                 </li>
                 <li>
@@ -55,7 +60,7 @@ const Header = () => {
                         onClick={() => navigateTo(Ids.DESCRIPTION)}
                         shouldDisplayShadow={shouldDisplayShadow}
                     >
-                        Description
+                        {t('description')}
                     </NavigationLink>
                 </li>
                 <li>
@@ -64,7 +69,7 @@ const Header = () => {
                         onClick={() => navigateTo(Ids.GALLERY)}
                         shouldDisplayShadow={shouldDisplayShadow}
                     >
-                        Gallerie
+                        {t('gallery')}
                     </NavigationLink>
                 </li>
                 <li>
@@ -73,10 +78,33 @@ const Header = () => {
                         onClick={() => navigateTo(Ids.CONTACT)}
                         shouldDisplayShadow={shouldDisplayShadow}
                     >
-                        Contact
+                        {t('contact')}
                     </NavigationLink>
                 </li>
             </Navigation>
+            <LanguageWrapper span={0} justify="space-between">
+                <LanguageSpan
+                    shouldDisplayShadow={shouldDisplayShadow}
+                    isSelected={i18n.language === 'fr'}
+                    onClick={() => onLanguageClick('fr')}
+                >
+                    FR
+                </LanguageSpan>
+                <LanguageSpan
+                    shouldDisplayShadow={shouldDisplayShadow}
+                    isSelected={i18n.language === 'nl'}
+                    onClick={() => onLanguageClick('nl')}
+                >
+                    NL
+                </LanguageSpan>
+                <LanguageSpan
+                    shouldDisplayShadow={shouldDisplayShadow}
+                    isSelected={i18n.language === 'en'}
+                    onClick={() => onLanguageClick('en')}
+                >
+                    EN
+                </LanguageSpan>
+            </LanguageWrapper>
             <StyledBurgerIcon id="burger-menu" shouldDisplayShadow={shouldDisplayShadow} />
         </HeaderContainer>
     );
