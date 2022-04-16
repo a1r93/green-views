@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 import Ids from '../../constants/ids';
 import { Body2, Heading2 } from '../atoms/typography';

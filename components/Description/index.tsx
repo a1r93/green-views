@@ -1,5 +1,5 @@
+import { useTranslation } from 'next-i18next';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
-import { useTranslation } from 'react-i18next';
 
 import Ids from '../../constants/ids';
 import { Column, Grid, Row } from '../atoms/layout';

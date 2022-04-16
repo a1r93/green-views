@@ -1,5 +1,5 @@
+import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import PhotoAlbum from 'react-photo-album';
 import useSWR from 'swr';
 

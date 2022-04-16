@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 import { Column } from '../atoms/layout';
 import { Body2, Heading4 } from '../atoms/typography';

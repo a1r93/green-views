@@ -1,5 +1,7 @@
+import { useTranslation } from 'next-i18next';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import Ids from '../../constants/ids';
 import { useResizeListener } from '../../hooks';
@@ -9,9 +11,10 @@ import {
 } from './style';
 
 const Header = () => {
-    const { t, i18n } = useTranslation('header');
+    const { t } = useTranslation('header');
     const [shouldDisplayShadow, setShouldDisplayShadow] = useState(false);
     const { width, height } = useResizeListener();
+    const router = useRouter();
 
     useEffect(() => {
         const onScroll = (event: Event) => {
@@ -34,9 +37,6 @@ const Header = () => {
     const navigateTo = (id: Ids) => {
         const element = document.getElementById(id);
         element?.scrollIntoView({ behavior: 'smooth' });
-    };
-    const onLanguageClick = (language: string) => {
-        i18n.changeLanguage(language);
     };
 
     return (
@@ -83,27 +83,21 @@ const Header = () => {
                 </li>
             </Navigation>
             <LanguageWrapper span={0} justify="space-between">
-                <LanguageSpan
-                    shouldDisplayShadow={shouldDisplayShadow}
-                    isSelected={i18n.language === 'fr'}
-                    onClick={() => onLanguageClick('fr')}
-                >
-                    FR
-                </LanguageSpan>
-                <LanguageSpan
-                    shouldDisplayShadow={shouldDisplayShadow}
-                    isSelected={i18n.language === 'nl'}
-                    onClick={() => onLanguageClick('nl')}
-                >
-                    NL
-                </LanguageSpan>
-                <LanguageSpan
-                    shouldDisplayShadow={shouldDisplayShadow}
-                    isSelected={i18n.language === 'en'}
-                    onClick={() => onLanguageClick('en')}
-                >
-                    EN
-                </LanguageSpan>
+                <Link href="/" locale="fr">
+                    <LanguageSpan shouldDisplayShadow={shouldDisplayShadow} isSelected={router.locale === 'fr'}>
+                        FR
+                    </LanguageSpan>
+                </Link>
+                <Link href="/" locale="nl">
+                    <LanguageSpan shouldDisplayShadow={shouldDisplayShadow} isSelected={router.locale === 'nl'}>
+                        NL
+                    </LanguageSpan>
+                </Link>
+                <Link href="/" locale="en">
+                    <LanguageSpan shouldDisplayShadow={shouldDisplayShadow} isSelected={router.locale === 'en'}>
+                        EN
+                    </LanguageSpan>
+                </Link>
             </LanguageWrapper>
             <StyledBurgerIcon id="burger-menu" shouldDisplayShadow={shouldDisplayShadow} />
         </HeaderContainer>

@@ -1,7 +1,7 @@
 import 'animate.css/animate.min.css';
 import './index.css';
-import '../translations';
 
+import { appWithTranslation } from 'next-i18next';
 import { ThemeProvider } from 'styled-components';
 
 import { defaultTheme } from '../styles';
@@ -17,4 +17,4 @@ function MyApp({ Component, pageProps }: AppProps) {
     );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);
