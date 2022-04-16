@@ -1,12 +1,12 @@
 {
-    "services": "Nos services",
-    "services-subtitle": "Voici ce que nous vous proposons",
-    "maintenance": "Entretien",
-    "maintenance-description": "Tonte hebdomadaire/bi-mensuelle, entretien de parterres, soufflage des feuilles et taille des haies et arbustes.",
-    "facilities": "Aménagements",
-    "facilities-description": "Pavage, dallage, terrasses en bois, pose de clotures, création de pelouses et remise à niveau du jardin.",
-    "plantation": "Plantation",
-    "plantation-description": "Réalisation de croquis, haies, parterres, bacs à fleurs et plantes d'intérieur.",
-    "pruning": "Abattage/élagage",
-    "pruning-description": "Elagage hivernal (fruitiers, arbres, ...), élagage de branches mortes, abattage tout au long de l'année et rognage."
+    "services": "Onze diensten",
+    "services-subtitle": "Dit is wat we je bieden",
+    "services-title-1": "Onderhoud",
+    "services-description-1": "Wekelijks/tweewekelijks maaien, bloembedden onderhouden, blad blazen en hagen en struiken snoeien.",
+    "services-title-2": "Faciliteiten",
+    "services-description-2": "Bestrating, houten terrassen, het plaatsen van schuttingen, het aanleggen van gazons en het opwaarderen van de tuin.",
+    "services-title-3": "Plantage",
+    "services-description-3": "Realisatie van schetsen, hagen, bloemperken, bloembakken en kamerplanten.",
+    "services-title-4": "Kappen/snoeien",
+    "services-description-4": "Wintersnoei (fruitbomen, bomen etc.), dode takken snoeien, het hele jaar door kappen en snoeien."
 }

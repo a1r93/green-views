@@ -14,7 +14,7 @@ const Services = () => {
     return (
         <ServicesContainer align="center" padding={[8, 2]} id={Ids.SERVICES}>
             <ServicesWrapper align="center">
-                <TitleWrapper>
+                <TitleWrapper align="center">
                     <Heading2>{t('services')}</Heading2>
                     <Body2>{t('services-subtitle')}</Body2>
                 </TitleWrapper>

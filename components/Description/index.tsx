@@ -12,8 +12,8 @@ const Description = () => {
     const { t } = useTranslation('description');
 
     return (
-        <DescriptionContainer>
-            <StyledLimitedWidth maxWidth={1150} align="center" margin={[6, 0, 0]} id={Ids.DESCRIPTION}>
+        <DescriptionContainer id={Ids.DESCRIPTION}>
+            <StyledLimitedWidth maxWidth={1150} align="center" margin={[6, 0, 0]}>
                 <Column>
                     <DescriptionWrapper>
                         <Heading2>{t('description-title')}</Heading2>

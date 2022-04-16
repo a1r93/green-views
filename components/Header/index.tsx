@@ -34,29 +34,42 @@ const Header = () => {
         };
     }, [height, width]);
 
+    const getOffsetById = (id: Ids, defaultOffset: number) => {
+        if (id === Ids.DESCRIPTION) return 0;
+        if (id === Ids.GALLERY) return defaultOffset + 40;
+
+        return defaultOffset;
+    };
+
     const navigateTo = (id: Ids) => {
         const element = document.getElementById(id);
-        element?.scrollIntoView({ behavior: 'smooth' });
+        if (!element) return;
+
+        const scrollOffset = width >= 600 ? HEADER_SIZE_SMALL : HEADER_SIZE;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - getOffsetById(id, scrollOffset);
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth',
+        });
     };
 
     return (
         <HeaderContainer justify="space-between" align="center" padding={[2]} shouldDisplayShadow={shouldDisplayShadow}>
-            <NavigationLink href={`#${Ids.WELCOME}`} onClick={() => navigateTo(Ids.WELCOME)}>
+            <NavigationLink onClick={() => navigateTo(Ids.WELCOME)}>
                 <Logo src="/images/green-views-logo.png" />
             </NavigationLink>
             <Navigation>
                 <li>
-                    <NavigationLink
-                        href={`#${Ids.SERVICES}`}
-                        onClick={() => navigateTo(Ids.SERVICES)}
-                        shouldDisplayShadow={shouldDisplayShadow}
-                    >
+                    <NavigationLink onClick={() => navigateTo(Ids.SERVICES)} shouldDisplayShadow={shouldDisplayShadow}>
                         {t('services')}
                     </NavigationLink>
                 </li>
                 <li>
                     <NavigationLink
-                        href={`#${Ids.DESCRIPTION}`}
                         onClick={() => navigateTo(Ids.DESCRIPTION)}
                         shouldDisplayShadow={shouldDisplayShadow}
                     >
@@ -64,20 +77,12 @@ const Header = () => {
                     </NavigationLink>
                 </li>
                 <li>
-                    <NavigationLink
-                        href={`#${Ids.GALLERY}`}
-                        onClick={() => navigateTo(Ids.GALLERY)}
-                        shouldDisplayShadow={shouldDisplayShadow}
-                    >
+                    <NavigationLink onClick={() => navigateTo(Ids.GALLERY)} shouldDisplayShadow={shouldDisplayShadow}>
                         {t('gallery')}
                     </NavigationLink>
                 </li>
                 <li>
-                    <NavigationLink
-                        href={`#${Ids.CONTACT}`}
-                        onClick={() => navigateTo(Ids.CONTACT)}
-                        shouldDisplayShadow={shouldDisplayShadow}
-                    >
+                    <NavigationLink onClick={() => navigateTo(Ids.CONTACT)} shouldDisplayShadow={shouldDisplayShadow}>
                         {t('contact')}
                     </NavigationLink>
                 </li>

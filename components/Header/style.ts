@@ -44,6 +44,7 @@ export const Navigation = styled.ul`
 export const NavigationLink = styled(Link)<{ shouldDisplayShadow?: boolean }>`
     color: ${({ shouldDisplayShadow, theme }) =>
         shouldDisplayShadow ? theme.palette.primary[900] : theme.palette.white};
+    cursor: pointer;
 `;
 
 export const LanguageWrapper = styled(Row)`

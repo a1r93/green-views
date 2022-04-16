@@ -1,8 +1,8 @@
 {
-    "company": "Société",
-    "address": "Adresse",
+    "company": "Bedrijf",
+    "address": "Adres",
     "contact": "Contact",
-    "social-networks": "Réseaux sociaux",
-    "vat": "TVA",
-    "belgium": "Belgique"
+    "social-networks": "Sociale netwerken",
+    "vat": "VAT",
+    "belgium": "België"
 }

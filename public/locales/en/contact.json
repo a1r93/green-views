@@ -1,9 +1,9 @@
 {
-    "contact-us": "Contactez-nous dès maintenant !",
-    "contact-us-desc": "Vous n'êtes pas encore convaincu ? Ou vous souhaitez recevoir un devis ? Contactez-nous sans plus attendre en utilisant le formulaire ci-dessous",
-    "name": "Nom",
-    "mail": "Adresse mail",
-    "phone": "Numéro de téléphone",
-    "question": "Posez ici votre question...",
-    "send": "Envoyer"
+    "contact-us": "Contact us now!",
+    "contact-us-desc": "You're not convinced yet ? Or would you like to receive an estimate? Contact us now using the form below.",
+    "name": "Name",
+    "mail": "Email address",
+    "phone": "Phone number",
+    "question": "Ask your question here...",
+    "send": "Send"
 }
