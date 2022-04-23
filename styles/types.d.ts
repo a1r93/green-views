@@ -11,6 +11,7 @@ export interface IPalette {
     primary: IColorVariants;
     secondary: IColorVariants;
     tertiary: IColorVariants;
+    error: IColorVariants;
     white: string;
 }
 

@@ -1,7 +1,7 @@
 import { v2 as cloudinary } from 'cloudinary';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { ICloudinaryPictureResponse } from './pictures.types';
+import { ICloudinaryPictureResponse } from './types';
 
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,

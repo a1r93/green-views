@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import { Column } from '../atoms/layout';
+import { Body1, Body3 } from '../atoms/typography';
 import { HEADER_SIZE, HEADER_SIZE_SMALL } from '../Header/style';
 
 export const ContactTeetContainer = styled(Column)`
@@ -23,10 +24,18 @@ export const ContactWrapper = styled(Column)`
         color: ${({ theme }) => theme.palette.primary[500]};
         text-align: center;
     }
+`;
 
-    & > span {
-        color: ${({ theme }) => theme.palette.tertiary[900]};
-        text-align: center;
-        margin: ${({ theme }) => theme.spacing([2, 0])};
-    }
+export const Description = styled(Body1)`
+    color: ${({ theme }) => theme.palette.tertiary[900]};
+    text-align: center;
+    margin: ${({ theme }) => theme.spacing([2, 0])};
+`;
+
+export const ErrorMessage = styled(Body3)`
+    color: ${({ theme }) => theme.palette.error[500]};
+    text-align: start;
+    margin: 0;
+    margin-top: ${({ theme }) => theme.spacing([-0.5])};
+    margin-left: ${({ theme }) => theme.spacing([0.5])};
 `;

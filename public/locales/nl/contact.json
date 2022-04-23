@@ -5,5 +5,11 @@
     "mail": "Email adres",
     "phone": "Telefoonnummer",
     "question": "Stel hier je vraag...",
-    "send": "Sturen"
+    "send": "Sturen",
+    "name-error": "Vul je naam in",
+    "email-error": "Vul je email adres in",
+    "email-invalid": "Vul een geldig email adres in",
+    "phone-error": "Vul je telefoonnummer in",
+    "phone-invalid": "Vul een geldig telefoonnummer in",
+    "question-error": "Vul een vraag in"
 }

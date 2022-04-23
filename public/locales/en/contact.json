@@ -5,5 +5,11 @@
     "mail": "Email address",
     "phone": "Phone number",
     "question": "Ask your question here...",
-    "send": "Send"
+    "send": "Send",
+    "name-error": "Please enter your name",
+    "email-error": "Please enter your email address",
+    "email-invalid": "Please enter a valid email address",
+    "phone-error": "Please enter your phone number",
+    "phone-invalid": "Please enter a valid phone number",
+    "question-error": "Please enter your question"
 }
