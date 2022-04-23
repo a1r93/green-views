@@ -5,10 +5,11 @@ import { ButtonContainer } from './style';
 interface IButtonProps {
     color?: TPaletteColors;
     children: string;
+    onClick: () => void;
 }
 
-const Button = ({ color = 'primary', children }: IButtonProps) => (
-    <ButtonContainer color={color}>
+const Button = ({ color = 'primary', children, onClick }: IButtonProps) => (
+    <ButtonContainer color={color} onClick={onClick}>
         <Body1>{children}</Body1>
     </ButtonContainer>
 );

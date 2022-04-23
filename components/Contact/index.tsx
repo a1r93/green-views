@@ -11,6 +11,24 @@ import { ContactContainer, ContactTeetContainer, ContactWrapper } from './style'
 const Contact = () => {
     const { t } = useTranslation('contact');
 
+    const handleSubmit = () => {
+        console.log('Sending');
+        let data = {};
+        fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json, text/plain, */*',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        }).then(res => {
+            console.log('Response received');
+            if (res.status === 200) {
+                console.log('Response succeeded!');
+            }
+        });
+    };
+
     return (
         <ContactTeetContainer>
             <Teeth />
@@ -23,7 +41,7 @@ const Contact = () => {
                     <TextField placeholder={t('phone')} />
                     <TextField multiline placeholder={t('question')} />
                     <Row justify="center" span={0} margin={[4, 0, 0]}>
-                        <Button>{t('send')}</Button>
+                        <Button onClick={handleSubmit}>{t('send')}</Button>
                     </Row>
                 </ContactWrapper>
             </ContactContainer>
