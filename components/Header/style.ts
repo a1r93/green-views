@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import BurgerIcon from '../atoms/icons/Burger';
+import MenuIcon from '../atoms/icons/Menu';
 import { Row } from '../atoms/layout';
 import { Body1, Link } from '../atoms/typography';
 
@@ -62,7 +62,7 @@ export const LanguageSpan = styled(Body1)<{ isSelected: boolean; shouldDisplaySh
     cursor: pointer;
 `;
 
-export const StyledBurgerIcon = styled(BurgerIcon)<{ shouldDisplayShadow?: boolean }>`
+export const StyledMenuIcon = styled(MenuIcon)<{ shouldDisplayShadow?: boolean }>`
     display: none;
 
     & line {

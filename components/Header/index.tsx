@@ -7,7 +7,7 @@ import Ids from '../../constants/ids';
 import { useResizeListener } from '../../hooks';
 import {
     HEADER_SIZE, HEADER_SIZE_SMALL, HeaderContainer, LanguageSpan, LanguageWrapper, Logo,
-    Navigation, NavigationLink, StyledBurgerIcon
+    Navigation, NavigationLink, StyledMenuIcon
 } from './style';
 
 const Header = () => {
@@ -104,7 +104,7 @@ const Header = () => {
                     </LanguageSpan>
                 </Link>
             </LanguageWrapper>
-            <StyledBurgerIcon id="burger-menu" shouldDisplayShadow={shouldDisplayShadow} />
+            <StyledMenuIcon id="menu" shouldDisplayShadow={shouldDisplayShadow} />
         </HeaderContainer>
     );
 };

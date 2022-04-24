@@ -1,6 +1,6 @@
 import BaseIcon, { BaseIconProps } from './BaseIcon';
 
-const BurgerIcon = (props: BaseIconProps) => (
+const MenuIcon = (props: BaseIconProps) => (
     <BaseIcon {...props}>
         <line y1="4" x2="24" y2="4" stroke="white" strokeWidth="3" />
         <line y1="12" x2="24" y2="12" stroke="white" strokeWidth="3" />
@@ -8,4 +8,4 @@ const BurgerIcon = (props: BaseIconProps) => (
     </BaseIcon>
 );
 
-export default BurgerIcon;
+export default MenuIcon;
