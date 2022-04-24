@@ -6,10 +6,11 @@ interface IButtonProps {
     color?: TPaletteColors;
     children: string;
     onClick: () => void;
+    isLoading?: boolean;
 }
 
-const Button = ({ color = 'primary', children, onClick }: IButtonProps) => (
-    <ButtonContainer color={color} onClick={onClick}>
+const Button = ({ color = 'primary', children, onClick, isLoading = false }: IButtonProps) => (
+    <ButtonContainer color={color} onClick={onClick} isLoading={isLoading}>
         <Body1>{children}</Body1>
     </ButtonContainer>
 );

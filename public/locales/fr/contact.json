@@ -11,5 +11,6 @@
     "email-invalid": "Veuillez entrer une adresse mail valide",
     "phone-error": "Veuillez entrer votre numéro de téléphone",
     "phone-invalid": "Veuillez entrer un numéro de téléphone valide",
-    "question-error": "Veuillez entrer votre question"
+    "question-error": "Veuillez entrer votre question",
+    "submit-error": "Une erreur est survenue lors de l'envoi de votre message, veuillez réessayer plus tard"
 }

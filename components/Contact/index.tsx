@@ -22,6 +22,7 @@ interface IForm {
 
 const Contact = () => {
     const { t } = useTranslation('contact');
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const [values, setValues] = useState<IForm>({
         name: '',
         email: '',
@@ -29,6 +30,7 @@ const Contact = () => {
         question: '',
     });
     const [errors, setErrors] = useState<Partial<IForm>>({});
+    const [hasSubmitError, setHasSubmitError] = useState(true);
 
     const validationSchema = object({
         name: string().required(t('name-error')),
@@ -55,6 +57,7 @@ const Contact = () => {
     };
 
     const handleSubmit = async () => {
+        setIsSubmitting(true);
         const isFormValid = await validateValues();
         if (!isFormValid) return;
 
@@ -66,9 +69,10 @@ const Contact = () => {
             },
             body: JSON.stringify(values),
         }).then(res => {
-            console.log('Response received');
             if (res.status === 200) {
-                console.log('Response succeeded!');
+                setIsSubmitting(false);
+            } else {
+                setHasSubmitError(true);
             }
         });
     };
@@ -120,8 +124,11 @@ const Contact = () => {
                         isError={!!errors.question}
                     />
                     {errors.question && <ErrorMessage>{errors.question}</ErrorMessage>}
+                    {hasSubmitError && <ErrorMessage>{t('submit-error')}</ErrorMessage>}
                     <Row justify="center" span={0} margin={[4, 0, 0]}>
-                        <Button onClick={handleSubmit}>{t('send')}</Button>
+                        <Button onClick={handleSubmit} isLoading={isSubmitting}>
+                            {t('send')}
+                        </Button>
                     </Row>
                 </ContactWrapper>
             </ContactContainer>
