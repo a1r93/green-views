@@ -3,7 +3,7 @@ module.exports = {
         {
             name: 'green-views',
             script: 'yarn',
-            args: 'start',
+            args: 'start --port 80',
             interpreter: '/bin/bash',
         },
     ],
