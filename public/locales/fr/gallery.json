@@ -1,4 +1,6 @@
 {
     "gallery": "Galerie photo",
-    "gallery-subtitle": "Découvrez un aperçu de notre quotidien"
+    "gallery-subtitle": "Découvrez un aperçu de notre quotidien",
+    "error-title": "Oups, une erreur s'est produite",
+    "error-description": "Nous n'avons pas réussi à charger les images, Veuillez réessayer plus tard."
 }

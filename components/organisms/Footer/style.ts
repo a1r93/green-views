@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import FacebookIcon from '../../atoms/icons/Facebook';
+import InstagramIcon from '../../atoms/icons/Instagram';
 import { Column, Row } from '../../atoms/layout';
 
 export const FooterContainer = styled(Column)`
@@ -30,4 +32,22 @@ export const FooterWrapper = styled(Row)`
         align-items: flex-start;
         gap: 24px;
     }
+`;
+
+export const SocialLink = styled.a`
+    text-decoration: none;
+`;
+
+export const StyledFacebook = styled(FacebookIcon)`
+    width: 18px;
+    height: 18px;
+    fill: ${({ theme }) => theme.palette.white};
+    margin: ${({ theme }) => theme.spacing([0.5])};
+`;
+
+export const StyledInstagram = styled(InstagramIcon)`
+    width: 18px;
+    height: 18px;
+    fill: ${({ theme }) => theme.palette.white};
+    margin: ${({ theme }) => theme.spacing([0.5])};
 `;

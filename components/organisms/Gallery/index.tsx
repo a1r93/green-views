@@ -6,9 +6,9 @@ import useSWR from 'swr';
 import Ids from '../../../constants/ids';
 import intenseImage from '../../../utils/intenseImage';
 import { Column } from '../../atoms/layout';
-import { Body2, Heading2 } from '../../atoms/typography';
+import { Body1, Body2, Heading2, Heading3 } from '../../atoms/typography';
 import { IPhoto, preparePhotos } from './photos';
-import { Fade, GalleryContainer, GalleryWrapper } from './style';
+import { ErrorContainer, Fade, GalleryContainer, GalleryWrapper } from './style';
 
 const fetcher = (url: string) =>
     fetch(url).then(async res => {
@@ -21,8 +21,6 @@ const Gallery = () => {
     const { t } = useTranslation('gallery');
     const [shouldShowAll, setShouldShowAll] = useState(false);
     const { data: photos, error } = useSWR('/api/pictures', fetcher);
-
-    if (error) return <div>Failed to load</div>;
 
     const onImageClick = (event: React.MouseEvent<Element, MouseEvent>, photo: IPhoto, index: number) => {
         if (hasClicked) return;
@@ -52,9 +50,16 @@ const Gallery = () => {
                 <Body2>{t('gallery-subtitle')}</Body2>
             </Column>
             <GalleryWrapper>
-                <PhotoAlbum onClick={onImageClick} photos={photos || []} layout="columns" />
+                {error ? (
+                    <ErrorContainer align="center" margin={[4, 0]}>
+                        <Heading3>{t('error-title')}</Heading3>
+                        <Body1>{t('error-description')}</Body1>
+                    </ErrorContainer>
+                ) : (
+                    <PhotoAlbum onClick={onImageClick} photos={photos || []} layout="columns" />
+                )}
             </GalleryWrapper>
-            {!shouldShowAll && <Fade onClick={() => setShouldShowAll(true)} />}
+            {!shouldShowAll && !error && <Fade onClick={() => setShouldShowAll(true)} />}
         </GalleryContainer>
     );
 };

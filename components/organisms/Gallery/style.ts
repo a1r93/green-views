@@ -40,9 +40,25 @@ export const GalleryWrapper = styled.div`
     width: 100%;
     max-width: 1150px;
     margin-top: ${({ theme }) => theme.spacing([5])};
+    display: flex;
+    justify-content: center;
 
     img {
         border-radius: 4px;
+    }
+`;
+
+export const ErrorContainer = styled(Column)`
+    max-width: 510px;
+
+    & h3,
+    span {
+        color: ${({ theme }) => theme.palette.error[100]};
+        text-align: center;
+    }
+
+    & h3 {
+        margin-bottom: ${({ theme }) => theme.spacing([0.5])};
     }
 `;
 

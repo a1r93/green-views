@@ -1,4 +1,6 @@
 {
     "gallery": "Fotogallerij",
-    "gallery-subtitle": "Ontdek een overzicht van ons dagelijks leven"
+    "gallery-subtitle": "Ontdek een overzicht van ons dagelijks leven",
+    "error-title": "Oeps, er ging iets mis!",
+    "error-description": "We konden de afbeeldingen niet laden, probeer het later opnieuw."
 }

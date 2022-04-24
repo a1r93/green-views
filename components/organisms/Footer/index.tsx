@@ -1,8 +1,10 @@
 import { useTranslation } from 'next-i18next';
 
-import { Column } from '../../atoms/layout';
+import { Column, Row } from '../../atoms/layout';
 import { Body2, Heading4 } from '../../atoms/typography';
-import { FooterContainer, FooterWrapper } from './style';
+import {
+    FooterContainer, FooterWrapper, SocialLink, StyledFacebook, StyledInstagram
+} from './style';
 
 const Footer = () => {
     const { t } = useTranslation('footer');
@@ -28,8 +30,18 @@ const Footer = () => {
                 </Column>
                 <Column>
                     <Heading4>{t('social-networks')}</Heading4>
-                    <Body2>Facebook</Body2>
-                    <Body2>Instagram</Body2>
+                    <SocialLink href="https://www.facebook.com/greenviewssprl">
+                        <Row align="center">
+                            <StyledFacebook />
+                            <Body2>Facebook</Body2>
+                        </Row>
+                    </SocialLink>
+                    <SocialLink href="https://www.instagram.com/greenviewssrl/?hl=fr">
+                        <Row align="center">
+                            <StyledInstagram />
+                            <Body2>Instagram</Body2>
+                        </Row>
+                    </SocialLink>
                 </Column>
             </FooterWrapper>
         </FooterContainer>

@@ -24,7 +24,7 @@ const palette: IPalette = {
         900: '#474A5C',
     },
     error: {
-        100: '#F0ABA8',
+        100: '#F8D5D3',
         300: '#E46B67',
         500: '#DB3A34',
         700: '#AD231F',
