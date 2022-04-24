@@ -29,6 +29,12 @@ transporter.use(
 );
 
 const contactHandler = async (req: NextApiRequest, res: NextApiResponse) => {
+    if (req.method !== 'POST') {
+        res.setHeader('Allow', ['POST']);
+        res.status(405).end(`Method ${req.method} Not Allowed`);
+        return;
+    }
+
     const bodyErrors = validateContactBody(req.body);
     if (bodyErrors.length > 0) {
         res.status(400).json({ message: 'The request body is invalid', errors: bodyErrors });

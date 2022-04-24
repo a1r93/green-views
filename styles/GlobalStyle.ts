@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { HEADER_SIZE, HEADER_SIZE_SMALL } from '../components/Header/style';
+import { HEADER_SIZE, HEADER_SIZE_SMALL } from '../components/organisms/Header/style';
 
 export const GlobalStyle = createGlobalStyle`
   * {

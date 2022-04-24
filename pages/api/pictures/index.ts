@@ -37,12 +37,8 @@ const picturesHandler = async (req: NextApiRequest, res: NextApiResponse) => {
             const allPictures = await fetchAllPictures();
             res.status(200).json({ data: allPictures.resources });
             break;
-        case 'POST':
-            // Update or create data in your database
-            res.status(201).json({ data: 'post' });
-            break;
         default:
-            res.setHeader('Allow', ['GET', 'PUT']);
+            res.setHeader('Allow', ['GET']);
             res.status(405).end(`Method ${method} Not Allowed`);
     }
 };

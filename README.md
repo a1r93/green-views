@@ -25,5 +25,10 @@ First connect to the green views server, then run the following commands
 git pull
 yarn
 yarn build
-pm2 start yarn --name green-views -- start --port 80
 ```
+
+If it is the first time you start the server or if you deleted the previous from pm2
+
+`pm2 start yarn --name green-views -- start --port 80`
+
+else use `pm2 restart green-views`
