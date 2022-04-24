@@ -1,8 +1,20 @@
-import { ICloudinaryPicture } from '../../pages/api/pictures.types';
+import { ICloudinaryPicture } from '../../pages/api/pictures/types';
 
 const breakpoints = [1080, 640, 384, 256, 128, 96, 64, 48];
 
-export const preparePhotos = (pictures: ICloudinaryPicture[]) => {
+export interface IPhoto {
+    src: string;
+    width: number;
+    height: number;
+    id: string;
+    images: {
+        src: string;
+        width: number;
+        height: number;
+    }[];
+}
+
+export const preparePhotos = (pictures: ICloudinaryPicture[]): IPhoto[] => {
     const preparedPhotos = pictures.map(picture => ({
         src: picture.secure_url,
         width: picture.width,

@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 import LeafIcon from '../../atoms/icons/Leaf';
 
@@ -13,31 +13,42 @@ export const LeavesContainer = styled.div`
     justify-content: center;
 `;
 
-export const LeavesWrapper = styled.div<{ width: number; height: number }>`
+interface ILeavesWrapperProps {
+    width: number;
+    height: number;
+}
+
+export const LeavesWrapper = styled.div.attrs<ILeavesWrapperProps>(({ width, height }) => ({
+    style: {
+        width: `${width}%`,
+        height: `${height}%`,
+    },
+}))<ILeavesWrapperProps>`
     position: relative;
-    width: ${({ width }) => width}%;
-    height: ${({ height }) => height}%;
     z-index: -1;
 `;
 
-export const AnimatedLeaf = styled(LeafIcon)<{
+interface ILeafProps {
     rotation: number;
     scale: number;
     opacity: number;
     top: number;
     left: number;
-}>`
+}
+
+export const AnimatedLeaf = styled(LeafIcon).attrs<ILeafProps>(({ rotation, scale, opacity, top, left }) => ({
+    style: {
+        transform: `rotate(${rotation}deg) scale(${scale})`,
+        opacity: opacity,
+        left: `${left}%`,
+        top: `${top}%`,
+    },
+}))<ILeafProps>`
     position: absolute;
-    left: ${({ left }) => left}%;
-    top: ${({ top }) => top}%;
     width: 14vw;
     height: 14vw;
     max-width: 80px;
     max-height: 80px;
-    ${({ rotation, scale }) => `
-        transform: scale(${scale}) rotate(${rotation}deg);
-    `}
-    opacity: ${({ opacity }) => opacity};
     ${({ theme }) => theme.breakpoints.forPhoneOnly} {
         width: 16vw;
         height: 16vw;

@@ -1,12 +1,13 @@
 import { useTranslation } from 'next-i18next';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import PhotoAlbum from 'react-photo-album';
 import useSWR from 'swr';
 
 import Ids from '../../constants/ids';
+import intenseImage from '../../utils/intenseImage';
 import { Column } from '../atoms/layout';
 import { Body2, Heading2 } from '../atoms/typography';
-import { preparePhotos } from './photos';
+import { IPhoto, preparePhotos } from './photos';
 import { Fade, GalleryContainer, GalleryWrapper } from './style';
 
 const fetcher = (url: string) =>
@@ -15,12 +16,28 @@ const fetcher = (url: string) =>
         return preparePhotos(data);
     });
 
+let hasClicked = false;
 const Gallery = () => {
     const { t } = useTranslation('gallery');
     const [shouldShowAll, setShouldShowAll] = useState(false);
     const { data: photos, error } = useSWR('/api/pictures', fetcher);
 
     if (error) return <div>Failed to load</div>;
+
+    const onImageClick = (event: React.MouseEvent<Element, MouseEvent>, photo: IPhoto, index: number) => {
+        if (hasClicked) return;
+        event.preventDefault();
+
+        const elements = document.getElementsByClassName(
+            'react-photo-album--photo',
+        ) as HTMLCollectionOf<HTMLImageElement>;
+        intenseImage(elements, {});
+
+        const clickedElement = elements[index];
+        clickedElement.click();
+
+        hasClicked = true;
+    };
 
     return (
         <GalleryContainer
@@ -35,7 +52,7 @@ const Gallery = () => {
                 <Body2>{t('gallery-subtitle')}</Body2>
             </Column>
             <GalleryWrapper>
-                <PhotoAlbum onClick={(event, test) => console.log(test)} photos={photos || []} layout="columns" />
+                <PhotoAlbum onClick={onImageClick} photos={photos || []} layout="columns" />
             </GalleryWrapper>
             {!shouldShowAll && <Fade onClick={() => setShouldShowAll(true)} />}
         </GalleryContainer>

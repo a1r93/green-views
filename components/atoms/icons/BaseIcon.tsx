@@ -5,11 +5,12 @@ interface IBaseIconProps {
     id?: string;
     className?: string;
     scale?: number;
+    style?: React.CSSProperties;
 }
 
 export type BaseIconProps = Pick<IBaseIconProps, 'className' | 'scale' | 'id'>;
 
-const BaseIcon = ({ className, scale = 1, children, id }: IBaseIconProps) => (
+const BaseIcon = ({ className, scale = 1, children, id, style }: IBaseIconProps) => (
     <svg
         width={scale * 24}
         height={scale * 24}
@@ -18,6 +19,7 @@ const BaseIcon = ({ className, scale = 1, children, id }: IBaseIconProps) => (
         xmlns="http://www.w3.org/2000/svg"
         className={className}
         id={`${id}-svg`}
+        style={style}
     >
         {children}
         <g id={`${id}-group`}></g>

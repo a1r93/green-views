@@ -1,29 +1,11 @@
 import { useEffect, useState } from 'react';
-import styled from 'styled-components';
 
 import { useResizeListener } from '../../../hooks';
+import { TeethContainer } from './style';
 
 interface ITeethProps {
     reverse?: boolean;
 }
-
-const TeethContainer = styled.div<ITeethProps & { translateX: number }>`
-    position: relative;
-    z-index: -1;
-    width: 200%;
-    height: ${({ theme }) => theme.spacing([3])};
-    background: ${({ theme }) => theme.palette.primary[500]};
-
-    background-image: url(/images/tooth.png);
-    background-position: 100% 0;
-    background-size: contain;
-    background-repeat: repeat-x;
-
-    transform: ${({ reverse, translateX }) => `
-        translateX(${-40 + (reverse ? -translateX : translateX)}%)
-        rotate(${reverse ? '-180' : '0'}deg)
-    `};
-`;
 
 const Teeth = ({ reverse }: ITeethProps) => {
     const [pageHeight, setPageHeight] = useState(0);
