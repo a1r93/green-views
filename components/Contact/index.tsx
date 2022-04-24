@@ -30,7 +30,7 @@ const Contact = () => {
         question: '',
     });
     const [errors, setErrors] = useState<Partial<IForm>>({});
-    const [hasSubmitError, setHasSubmitError] = useState(true);
+    const [hasSubmitError, setHasSubmitError] = useState(false);
 
     const validationSchema = object({
         name: string().required(t('name-error')),

@@ -1,6 +1,10 @@
 module.exports = {
-  apps : [{
-    name   : "app1",
-    script : "./app.js"
-  }]
-}
+    apps: [
+        {
+            name: 'green-views',
+            script: 'yarn',
+            args: 'start',
+            interpreter: '/bin/bash',
+        },
+    ],
+};
