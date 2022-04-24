@@ -57,10 +57,10 @@ const Contact = () => {
     };
 
     const handleSubmit = async () => {
-        setIsSubmitting(true);
         const isFormValid = await validateValues();
         if (!isFormValid) return;
 
+        setIsSubmitting(true);
         fetch('/api/contact', {
             method: 'POST',
             headers: {

@@ -9,10 +9,10 @@ import Leaves from './Leaves';
 import { WelcomeContainer, WelcomeWrapper } from './style';
 
 const Welcome = () => {
+    const { width } = useResizeListener();
     const { t } = useTranslation('welcome');
 
     const onDiscoverClick = () => {
-        const { width, height } = useResizeListener();
         const element = document.getElementById(Ids.SERVICES);
         if (!element) return;
 

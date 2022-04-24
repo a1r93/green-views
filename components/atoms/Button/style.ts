@@ -21,12 +21,18 @@ export const ButtonContainer = styled.button<IButtonContainerProps>`
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: ${({ color, theme }) => theme.palette[color][500]};
+    background-color: ${({ color, theme }) => theme.palette[color][500]};
     padding: ${({ theme }) => theme.spacing([1, 2])};
     border-radius: 4px;
     border: none;
     cursor: pointer;
     position: relative;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+    &:hover {
+        background-color: ${({ color, theme }) => theme.palette[color][300]};
+        transform: scale(1.05);
+    }
 
     & > span {
         color: ${({ theme, isLoading }) => (isLoading ? 'transparent' : theme.palette.white)};
@@ -45,7 +51,7 @@ export const ButtonContainer = styled.button<IButtonContainerProps>`
         border: 4px solid transparent;
         border-top-color: #ffffff;
         border-radius: 50%;
-        animation: ${loadingKf} 1s ease infinite;
+        animation: ${loadingKf} 1s ease ${({ isLoading }) => (isLoading ? 'infinite' : '')};
         opacity: ${({ isLoading }) => (isLoading ? 1 : 0)};
     }
 `;

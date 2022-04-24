@@ -8,7 +8,6 @@ export const WelcomeContainer = styled.div`
     height: 150vh;
     margin-top: -${HEADER_SIZE}px;
     width: 100%;
-    z-index: -1;
 
     ${({ theme }) => theme.breakpoints.forPhoneOnly} {
         height: calc(120vh + ${HEADER_SIZE_SMALL}px);
