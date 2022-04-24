@@ -1,31 +1,18 @@
 import { useTranslation } from 'next-i18next';
 
 import Ids from '../../../constants/ids';
-import { useResizeListener } from '../../../hooks';
+import useScrollTo from '../../../hooks/useScrollTo';
 import { Body1, Heading1 } from '../../atoms/typography';
 import Button from '../../molecules/Button';
-import { HEADER_SIZE, HEADER_SIZE_SMALL } from '../Header/style';
 import Leaves from './Leaves';
 import { WelcomeContainer, WelcomeWrapper } from './style';
 
 const Welcome = () => {
-    const { width } = useResizeListener();
     const { t } = useTranslation('welcome');
+    const scrollTo = useScrollTo();
 
     const onDiscoverClick = () => {
-        const element = document.getElementById(Ids.SERVICES);
-        if (!element) return;
-
-        const scrollOffset = width >= 600 ? HEADER_SIZE_SMALL : HEADER_SIZE;
-        const bodyRect = document.body.getBoundingClientRect().top;
-        const elementRect = element.getBoundingClientRect().top;
-        const elementPosition = elementRect - bodyRect;
-        const offsetPosition = elementPosition - scrollOffset;
-
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth',
-        });
+        scrollTo(Ids.SERVICES);
     };
 
     return (

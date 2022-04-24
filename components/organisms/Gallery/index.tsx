@@ -4,7 +4,7 @@ import PhotoAlbum from 'react-photo-album';
 import useSWR from 'swr';
 
 import Ids from '../../../constants/ids';
-import intenseImage from '../../../utils/intenseImage';
+import fullScreenImage from '../../../utils/fullscreenImage';
 import { Column } from '../../atoms/layout';
 import { Body1, Body2, Heading2, Heading3 } from '../../atoms/typography';
 import { IPhoto, preparePhotos } from './photos';
@@ -29,7 +29,7 @@ const Gallery = () => {
         const elements = document.getElementsByClassName(
             'react-photo-album--photo',
         ) as HTMLCollectionOf<HTMLImageElement>;
-        intenseImage(elements, {});
+        fullScreenImage(elements);
 
         const clickedElement = elements[index];
         clickedElement.click();

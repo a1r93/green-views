@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 
 import Ids from '../../../constants/ids';
 import { useResizeListener } from '../../../hooks';
+import useScrollTo from '../../../hooks/useScrollTo';
 import {
     HEADER_SIZE, HEADER_SIZE_SMALL, HeaderContainer, LanguageSpan, LanguageWrapper, Logo,
     Navigation, NavigationLink, StyledMenuIcon
@@ -15,6 +16,7 @@ const Header = () => {
     const [shouldDisplayShadow, setShouldDisplayShadow] = useState(false);
     const { width, height } = useResizeListener();
     const router = useRouter();
+    const scrollTo = useScrollTo();
 
     useEffect(() => {
         const onScroll = () => {
@@ -34,55 +36,29 @@ const Header = () => {
         };
     }, [height, width]);
 
-    const getOffsetById = (id: Ids, defaultOffset: number) => {
-        if (id === Ids.DESCRIPTION) return 0;
-        if (id === Ids.GALLERY) return defaultOffset + 40;
-
-        return defaultOffset;
-    };
-
-    const navigateTo = (id: Ids) => {
-        const element = document.getElementById(id);
-        if (!element) return;
-
-        const scrollOffset = width >= 600 ? HEADER_SIZE_SMALL : HEADER_SIZE;
-        const bodyRect = document.body.getBoundingClientRect().top;
-        const elementRect = element.getBoundingClientRect().top;
-        const elementPosition = elementRect - bodyRect;
-        const offsetPosition = elementPosition - getOffsetById(id, scrollOffset);
-
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth',
-        });
-    };
-
     return (
         <HeaderContainer justify="space-between" align="center" padding={[2]} shouldDisplayShadow={shouldDisplayShadow}>
-            <NavigationLink onClick={() => navigateTo(Ids.WELCOME)}>
+            <NavigationLink onClick={() => scrollTo(Ids.WELCOME)}>
                 <Logo src="/images/green-views-logo.png" />
             </NavigationLink>
             <Navigation>
                 <li>
-                    <NavigationLink onClick={() => navigateTo(Ids.SERVICES)} shouldDisplayShadow={shouldDisplayShadow}>
+                    <NavigationLink onClick={() => scrollTo(Ids.SERVICES)} shouldDisplayShadow={shouldDisplayShadow}>
                         {t('services')}
                     </NavigationLink>
                 </li>
                 <li>
-                    <NavigationLink
-                        onClick={() => navigateTo(Ids.DESCRIPTION)}
-                        shouldDisplayShadow={shouldDisplayShadow}
-                    >
+                    <NavigationLink onClick={() => scrollTo(Ids.DESCRIPTION)} shouldDisplayShadow={shouldDisplayShadow}>
                         {t('description')}
                     </NavigationLink>
                 </li>
                 <li>
-                    <NavigationLink onClick={() => navigateTo(Ids.GALLERY)} shouldDisplayShadow={shouldDisplayShadow}>
+                    <NavigationLink onClick={() => scrollTo(Ids.GALLERY)} shouldDisplayShadow={shouldDisplayShadow}>
                         {t('gallery')}
                     </NavigationLink>
                 </li>
                 <li>
-                    <NavigationLink onClick={() => navigateTo(Ids.CONTACT)} shouldDisplayShadow={shouldDisplayShadow}>
+                    <NavigationLink onClick={() => scrollTo(Ids.CONTACT)} shouldDisplayShadow={shouldDisplayShadow}>
                         {t('contact')}
                     </NavigationLink>
                 </li>
