@@ -8,7 +8,7 @@ import Gallery from '../components/Gallery';
 import Header from '../components/Header';
 import Services from '../components/Services';
 import Welcome from '../components/Welcome';
-import { HomePageContainer } from './style';
+import { HomePageContainer } from '../styles';
 
 const Home: NextPage = () => {
     return (
