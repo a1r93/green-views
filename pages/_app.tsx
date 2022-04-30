@@ -12,10 +12,6 @@ import type { AppProps } from 'next/app';
 function MyApp({ Component, pageProps }: AppProps) {
     return (
         <ThemeProvider theme={defaultTheme}>
-            <Head>
-                <title>Green Views</title>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-            </Head>
             <GlobalStyle />
             <Component {...pageProps} />
         </ThemeProvider>
