@@ -15,6 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Head>
                 <title>Green Views</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <meta name="google-site-verification" content="dpkCPxwWWvjGFRtqEdlzCh64Ioq_OteFAeZ9hymbfsU" />
             </Head>
             <GlobalStyle />
             <Component {...pageProps} />
