@@ -29,6 +29,13 @@ yarn build
 
 If it is the first time you start the server or if you deleted the previous from pm2
 
-`pm2 start yarn --name green-views -- start --port 80`
+`pm2 start yarn --name green-views -- start`
 
 else use `pm2 restart green-views`
+
+## Update the ssl certificate
+
+-   Go to the [ZeroSSL](https://manage.sslforfree.com/dashboard) website and log in
+-   Request a new certificate and follow the steps. The `http://www.greenviews.be/.well-known/pki-validation/*` route is
+    already accessible.
+-   The directory to put the certificates in is `/etc/ssl/green-views` on the green views server
