@@ -4,7 +4,26 @@ on:
         branches:
             - main
 jobs:
-    write-to-console:
+    push:
         runs-on: ubuntu-latest
         steps:
-            - run: echo 'Hello world!'
+            - name: Install SSH Key
+              uses: shimataro/ssh-key-action@v2
+              with:
+                  key: ${{ secrets.SSH_PRIVATE_KEY }}
+                  known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
+            - name: Adding Known Hosts
+              run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+            - name: Clone the repo on the server
+              run:
+                  ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /root && rm -rf green-views-tmp && git clone
+                  git@github.com:a1r93/green-views.git green-views-tmp"
+            - name: Build the app
+              run:
+                  ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /root/green-views-tmp && npm ci && npm run
+                  build"
+            - name: Restart the app
+              run:
+                  ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /root && pm2 delete green-views && rm -rf
+                  green-views && mv green-views-tmp green-views && cd green-views && pm2 start yarn --name green-views
+                  -- start"
