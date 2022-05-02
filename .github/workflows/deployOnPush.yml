@@ -21,7 +21,7 @@ jobs:
             - name: Build the app
               run:
                   ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /root/green-views-tmp && npm ci && npm run
-                  build"
+                  build && echo ${{ secrets.ENVIRONMENT_VARIABLES }} >> .env.local"
             - name: Restart the app
               run:
                   ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /root && pm2 delete green-views && rm -rf
