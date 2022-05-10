@@ -59,8 +59,8 @@ export const NavigationLink = styled(Link)<{ shouldDisplayShadow?: boolean }>`
 `;
 
 export const MenuBackground = styled.div<{ updateBackground: boolean; shouldDisplayShadow: boolean }>`
-    top: 0;
-    right: 0;
+    top: -110px;
+    right: -300px;
     position: absolute;
     display: flex;
     justify-content: flex-start;
@@ -79,6 +79,5 @@ export const MenuBackground = styled.div<{ updateBackground: boolean; shouldDisp
         `
         width: 520px;
         height: 460px;
-        transform: translate(60%,-30%);
     `}
 `;
