@@ -6,9 +6,10 @@ import { useEffect, useState } from 'react';
 import Ids from '../../../constants/ids';
 import { useResizeListener } from '../../../hooks';
 import useScrollTo from '../../../hooks/useScrollTo';
+import MobileMenu from './MobileMenu';
 import {
     HEADER_SIZE, HEADER_SIZE_SMALL, HeaderContainer, LanguageSpan, LanguageWrapper, Logo,
-    Navigation, NavigationLink, StyledMenuIcon
+    Navigation, NavigationLink
 } from './style';
 
 const Header = () => {
@@ -80,7 +81,7 @@ const Header = () => {
                     </LanguageSpan>
                 </Link>
             </LanguageWrapper>
-            <StyledMenuIcon id="menu" shouldDisplayShadow={shouldDisplayShadow} />
+            <MobileMenu shouldDisplayShadow={shouldDisplayShadow} onClick={scrollTo} />
         </HeaderContainer>
     );
 };

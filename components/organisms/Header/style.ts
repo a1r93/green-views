@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-import MenuIcon from '../../atoms/icons/Menu';
 import { Row } from '../../atoms/layout';
 import { Body1, Link } from '../../atoms/typography';
 
@@ -60,17 +59,4 @@ export const LanguageSpan = styled(Body1)<{ isSelected: boolean; shouldDisplaySh
         shouldDisplayShadow ? theme.palette.primary[900] : theme.palette.white};
     text-decoration: ${({ isSelected }) => (isSelected ? 'underline' : 'none')};
     cursor: pointer;
-`;
-
-export const StyledMenuIcon = styled(MenuIcon)<{ shouldDisplayShadow?: boolean }>`
-    display: none;
-
-    & line {
-        stroke: ${({ shouldDisplayShadow, theme }) =>
-            shouldDisplayShadow ? theme.palette.primary[900] : theme.palette.white};
-    }
-
-    ${({ theme }) => theme.breakpoints.forPhoneOnly} {
-        display: block;
-    }
 `;
