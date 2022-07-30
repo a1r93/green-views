@@ -38,4 +38,12 @@ else use `pm2 restart green-views`
 -   Go to the [ZeroSSL](https://manage.sslforfree.com/dashboard) website and log in
 -   Request a new certificate and follow the steps. The `http://www.greenviews.be/.well-known/pki-validation/*` route is
     already accessible.
+    -   Enter greenviews.be as domain name
+    -   Choose HTTP File Upload
+    -   Download the auth file and put it under /.well-known/pki-validation/ on the server
+        -   scp Downloads/<file-name>.txt <user>@<ip-address>:/.well-known/pki-validation/
+    -   Once the validation is done, download the certificate
+-   Cd to the certificates directory and delete the existing certificate: `cd /etc/ssl/green-views && rm -f ./*`
+-   Send the 3 files inside the downloaded zip file that same directory
+        -   unzip ~/Downloads/greenviews.be.zip -d ~/Downloads/greenviews-certs/ && scp ~/Downloads/greenviews-certs/* <user>@<ip-address>:/.well-known/pki-validation/
 -   The directory to put the certificates in is `/etc/ssl/green-views` on the green views server
