@@ -56,7 +56,7 @@ const Gallery = () => {
                         <Body1>{t('error-description')}</Body1>
                     </ErrorContainer>
                 ) : (
-                    <PhotoAlbum onClick={onImageClick} photos={photos || []} layout="columns" />
+                    <PhotoAlbum onClick={onImageClick} photos={photos || []} layout="masonry" />
                 )}
             </GalleryWrapper>
             {!shouldShowAll && !error && <Fade onClick={() => setShouldShowAll(true)} />}

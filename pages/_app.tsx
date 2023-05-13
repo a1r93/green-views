@@ -2,14 +2,13 @@ import 'animate.css/animate.min.css';
 import './index.css';
 
 import { appWithTranslation } from 'next-i18next';
-import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
 
 import { defaultTheme } from '../styles';
 import { GlobalStyle } from '../styles/GlobalStyle';
 
 import type { AppProps } from 'next/app';
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps<{}>) {
     return (
         <ThemeProvider theme={defaultTheme}>
             <GlobalStyle />

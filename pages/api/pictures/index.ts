@@ -29,8 +29,7 @@ const fetchAllPictures = () =>
     });
 
 const picturesHandler = async (req: NextApiRequest, res: NextApiResponse) => {
-    const { body, method } = req;
-    console.log(body);
+    const { method } = req;
 
     switch (method) {
         case 'GET':
