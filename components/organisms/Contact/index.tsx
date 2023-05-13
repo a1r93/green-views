@@ -23,7 +23,7 @@ const Contact = () => {
                     <Heading2>{t('contact-us')}</Heading2>
                     <Description>{t('contact-us-desc')}</Description>
                     <TextField
-                        placeholder={t('name')}
+                        placeholder={t('name') ?? ''}
                         name="name"
                         onChange={form.onInputChange}
                         value={form.values.name}
@@ -31,7 +31,7 @@ const Contact = () => {
                     />
                     {form.errors.name && <ErrorMessage>{form.errors.name}</ErrorMessage>}
                     <TextField
-                        placeholder={t('mail')}
+                        placeholder={t('mail') ?? ''}
                         name="email"
                         onChange={form.onInputChange}
                         value={form.values.email}
@@ -39,7 +39,7 @@ const Contact = () => {
                     />
                     {form.errors.email && <ErrorMessage>{form.errors.email}</ErrorMessage>}
                     <TextField
-                        placeholder={t('phone')}
+                        placeholder={t('phone') ?? ''}
                         name="phone"
                         onChange={form.onInputChange}
                         value={form.values.phone}
@@ -48,7 +48,7 @@ const Contact = () => {
                     {form.errors.phone && <ErrorMessage>{form.errors.phone}</ErrorMessage>}
                     <TextField
                         multiline
-                        placeholder={t('question')}
+                        placeholder={t('question') ?? ''}
                         name="question"
                         onChange={form.onInputChange}
                         value={form.values.question}

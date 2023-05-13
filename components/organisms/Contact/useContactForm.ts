@@ -37,10 +37,14 @@ const useContactForm = () => {
     const [hasSubmitError, setHasSubmitError] = useState(false);
 
     const validationSchema = object({
-        name: string().required(t('name-error')),
-        email: string().email(t('email-invalid')).required(t('email-error')),
-        phone: string().required(t('phone-error')).matches(phoneRegex, t('phone-invalid')),
-        question: string().required(t('question-error')),
+        name: string().required(t('name-error') ?? ''),
+        email: string()
+            .email(t('email-invalid') ?? '')
+            .required(t('email-error') ?? ''),
+        phone: string()
+            .required(t('phone-error') ?? '')
+            .matches(phoneRegex, t('phone-invalid') ?? ''),
+        question: string().required(t('question-error') ?? ''),
     });
 
     const validateValues = async () => {
