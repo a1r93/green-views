@@ -2,9 +2,7 @@ import { useTranslation } from 'next-i18next';
 
 import { Column, Row } from '../../atoms/layout';
 import { Body2, Heading4 } from '../../atoms/typography';
-import {
-    FooterContainer, FooterWrapper, SocialLink, StyledFacebook, StyledInstagram
-} from './style';
+import { FooterContainer, FooterWrapper, SocialLink, StyledFacebook, StyledInstagram } from './style';
 
 const Footer = () => {
     const { t } = useTranslation('footer');
@@ -25,7 +23,7 @@ const Footer = () => {
                 </Column>
                 <Column>
                     <Heading4>{t('contact')}</Heading4>
-                    <Body2>greenviews@gmail.com</Body2>
+                    <Body2>info@greenviews.be</Body2>
                     <Body2>+32 472 65 50 97</Body2>
                 </Column>
                 <Column>
