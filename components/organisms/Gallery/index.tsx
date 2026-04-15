@@ -1,13 +1,13 @@
 import { useTranslation } from 'next-i18next';
-import React, { useState } from 'react';
-import PhotoAlbum from 'react-photo-album';
+import { useState } from 'react';
+import PhotoAlbum, { ClickHandler, Photo } from 'react-photo-album';
 import useSWR from 'swr';
 
 import Ids from '../../../constants/ids';
 import fullScreenImage from '../../../utils/fullscreenImage';
 import { Column } from '../../atoms/layout';
 import { Body1, Body2, Heading2, Heading3 } from '../../atoms/typography';
-import { IPhoto, preparePhotos } from './photos';
+import { preparePhotos } from './photos';
 import { ErrorContainer, Fade, GalleryContainer, GalleryWrapper } from './style';
 
 const fetcher = (url: string) =>
@@ -22,7 +22,7 @@ const Gallery = () => {
     const [shouldShowAll, setShouldShowAll] = useState(false);
     const { data: photos, error } = useSWR('/api/pictures', fetcher);
 
-    const onImageClick = (event: React.MouseEvent<Element, MouseEvent>, photo: IPhoto, index: number) => {
+    const onImageClick: ClickHandler<Photo> = (event, _page, index) => {
         if (hasClicked) return;
         event.preventDefault();
 

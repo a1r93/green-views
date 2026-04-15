@@ -2,7 +2,7 @@ module.exports = {
     apps: [
         {
             name: 'green-views',
-            script: 'yarn',
+            script: 'pnpm',
             args: 'start --port 80',
             interpreter: '/bin/bash',
         },

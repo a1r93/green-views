@@ -8,7 +8,8 @@ import { defaultTheme } from '../styles';
 import { GlobalStyle } from '../styles/GlobalStyle';
 
 import type { AppProps } from 'next/app';
-function MyApp({ Component, pageProps }: AppProps<{}>) {
+
+function MyApp({ Component, pageProps }: AppProps) {
     return (
         <ThemeProvider theme={defaultTheme}>
             <GlobalStyle />
@@ -17,4 +18,4 @@ function MyApp({ Component, pageProps }: AppProps<{}>) {
     );
 }
 
-export default appWithTranslation(MyApp);
+export default appWithTranslation(MyApp as any);

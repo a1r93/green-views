@@ -3,15 +3,14 @@ import { AnimationOnScroll } from 'react-animation-on-scroll';
 import { Column } from '../../../atoms/layout';
 import { Body1, Heading3 } from '../../../atoms/typography';
 import OutlinedNumber from '../../../molecules/OutlinedNumber';
-import {
-    DescriptionWrapper, ServiceContainer, ServiceContent, ServiceNumberWrapper, ServiceWrapper
-} from './style';
+import { DescriptionWrapper, ServiceContainer, ServiceContent, ServiceNumberWrapper, ServiceWrapper } from './style';
+import { ReactNode } from 'react';
 
 interface ISingleServiceProps {
     title: string;
     description: string;
     index: number;
-    drawing: JSX.Element;
+    drawing: ReactNode;
 }
 
 const SingleService = ({ drawing, description, index, title }: ISingleServiceProps) => (
